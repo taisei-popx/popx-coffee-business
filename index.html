@@ -774,39 +774,89 @@ input[type="range"]::-webkit-slider-thumb {
             <h3>📊 S2 店舗 — 売上シミュレーション &amp; 投資回収</h3>
 
             <div class="note-box" style="margin-bottom:20px;">
-                <strong>S2店舗パラメータ：</strong>S1と同様に杯数・単価・コストから月間利益を積み上げ計算。投資回収シミュレーションに連動。
+                <strong>S2店舗 — 2モデル制：</strong>POPモデル（カジュアル）とBEAUTIFULモデル（ハイエンド）を独立シミュレーション。共通の固定コストを差し引いた合計が月間利益。
             </div>
 
-            <div class="card-grid" style="margin-bottom:16px;">
-                <div>
-                    <div style="font-family:var(--font-heading);font-size:12px;font-weight:700;color:var(--color-navy);letter-spacing:0.06em;margin-bottom:12px;">☕ S2 カフェパラメータ</div>
-                    <div class="control-group">
-                        <div class="control-label"><span>座席数</span><span class="control-val" id="v-s2-seats">15</span></div>
-                        <input type="range" id="s-s2-seats" min="8" max="40" value="15" oninput="calcInvestment()">
+            <!-- POP Model -->
+            <div class="card" style="border:2px solid var(--color-navy);">
+                <h3>☕ POP MODEL — カジュアルライン（¥1,200〜6,000）</h3>
+                <div class="note-box" style="margin:0 0 12px;font-size:11px;">ドリップ・ラテ・エスプレッソ系。日常使いの客層。</div>
+                <div class="card-grid" style="margin-bottom:0;">
+                    <div>
+                        <div class="control-group">
+                            <div class="control-label"><span>1日あたり杯数</span><span class="control-val" id="v-s2-pop-cups">40</span></div>
+                            <input type="range" id="s-s2-pop-cups" min="10" max="120" value="40" oninput="calcInvestment()">
+                        </div>
+                        <div class="control-group">
+                            <div class="control-label"><span>平均単価</span><span class="control-val" id="v-s2-pop-price">¥1,500</span></div>
+                            <input type="range" id="s-s2-pop-price" min="1200" max="6000" step="100" value="1500" oninput="calcInvestment()">
+                        </div>
                     </div>
+                    <div>
+                        <div class="control-group">
+                            <div class="control-label"><span>豆原価 / 杯</span><span class="control-val" id="v-s2-pop-bean">¥350</span></div>
+                            <input type="range" id="s-s2-pop-bean" min="150" max="800" step="10" value="350" oninput="calcInvestment()">
+                        </div>
+                        <div class="control-group">
+                            <div class="control-label"><span>その他原価 / 杯</span><span class="control-val" id="v-s2-pop-other">¥50</span></div>
+                            <input type="range" id="s-s2-pop-other" min="20" max="200" step="10" value="50" oninput="calcInvestment()">
+                        </div>
+                    </div>
+                </div>
+                <div style="background:#f8f9fc;border-radius:8px;padding:10px 16px;margin-top:12px;display:flex;justify-content:space-between;align-items:center;">
+                    <span style="font-size:12px;color:#666;">POP月間売上</span>
+                    <span style="font-family:var(--font-heading);font-size:18px;font-weight:700;color:var(--color-navy);" id="r-s2-pop-rev">¥0</span>
+                    <span style="font-size:12px;color:#666;">POP月間粗利</span>
+                    <span style="font-family:var(--font-heading);font-size:18px;font-weight:700;color:#059669;" id="r-s2-pop-gross">¥0</span>
+                </div>
+            </div>
+
+            <!-- BEAUTIFUL Model -->
+            <div class="card" style="border:2px solid var(--color-pink);">
+                <h3>✨ BEAUTIFUL MODEL — ハイエンドライン（¥8,000〜15,000）</h3>
+                <div class="note-box" style="margin:0 0 12px;font-size:11px;">テイスティング体験・プレミアムシングルオリジン・ペアリングコース。特別体験の客層。</div>
+                <div class="card-grid" style="margin-bottom:0;">
+                    <div>
+                        <div class="control-group">
+                            <div class="control-label"><span>1日あたり組数</span><span class="control-val" id="v-s2-beau-cups">5</span></div>
+                            <input type="range" id="s-s2-beau-cups" min="1" max="20" value="5" oninput="calcInvestment()">
+                        </div>
+                        <div class="control-group">
+                            <div class="control-label"><span>平均単価</span><span class="control-val" id="v-s2-beau-price">¥10,000</span></div>
+                            <input type="range" id="s-s2-beau-price" min="8000" max="15000" step="500" value="10000" oninput="calcInvestment()">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="control-group">
+                            <div class="control-label"><span>原価 / 組</span><span class="control-val" id="v-s2-beau-bean">¥2,000</span></div>
+                            <input type="range" id="s-s2-beau-bean" min="500" max="5000" step="100" value="2000" oninput="calcInvestment()">
+                        </div>
+                        <div class="control-group">
+                            <div class="control-label"><span>その他原価 / 組</span><span class="control-val" id="v-s2-beau-other">¥500</span></div>
+                            <input type="range" id="s-s2-beau-other" min="100" max="2000" step="50" value="500" oninput="calcInvestment()">
+                        </div>
+                    </div>
+                </div>
+                <div style="background:#f8f9fc;border-radius:8px;padding:10px 16px;margin-top:12px;display:flex;justify-content:space-between;align-items:center;">
+                    <span style="font-size:12px;color:#666;">BEAUTIFUL月間売上</span>
+                    <span style="font-family:var(--font-heading);font-size:18px;font-weight:700;color:var(--color-navy);" id="r-s2-beau-rev">¥0</span>
+                    <span style="font-size:12px;color:#666;">BEAUTIFUL月間粗利</span>
+                    <span style="font-family:var(--font-heading);font-size:18px;font-weight:700;color:#059669;" id="r-s2-beau-gross">¥0</span>
+                </div>
+            </div>
+
+            <!-- Shared Store Costs -->
+            <div class="card-grid" style="margin:16px 0;">
+                <div>
+                    <div style="font-family:var(--font-heading);font-size:12px;font-weight:700;color:var(--color-navy);letter-spacing:0.06em;margin-bottom:12px;">🏠 S2 共通固定コスト</div>
                     <div class="control-group">
                         <div class="control-label"><span>営業日数 / 月</span><span class="control-val" id="v-s2-days">25</span></div>
                         <input type="range" id="s-s2-days" min="15" max="30" value="25" oninput="calcInvestment()">
                     </div>
                     <div class="control-group">
-                        <div class="control-label"><span>1日あたり杯数</span><span class="control-val" id="v-s2-cups">50</span></div>
-                        <input type="range" id="s-s2-cups" min="20" max="120" value="50" oninput="calcInvestment()">
+                        <div class="control-label"><span>座席数</span><span class="control-val" id="v-s2-seats">15</span></div>
+                        <input type="range" id="s-s2-seats" min="8" max="40" value="15" oninput="calcInvestment()">
                     </div>
-                    <div class="control-group">
-                        <div class="control-label"><span>平均単価</span><span class="control-val" id="v-s2-price">¥1,500</span></div>
-                        <input type="range" id="s-s2-price" min="800" max="3000" step="50" value="1500" oninput="calcInvestment()">
-                    </div>
-                    <div class="control-group">
-                        <div class="control-label"><span>豆原価 / 杯</span><span class="control-val" id="v-s2-bean">¥400</span></div>
-                        <input type="range" id="s-s2-bean" min="200" max="800" step="10" value="400" oninput="calcInvestment()">
-                    </div>
-                    <div class="control-group">
-                        <div class="control-label"><span>その他原価 / 杯</span><span class="control-val" id="v-s2-other">¥50</span></div>
-                        <input type="range" id="s-s2-other" min="20" max="150" step="10" value="50" oninput="calcInvestment()">
-                    </div>
-                </div>
-                <div>
-                    <div style="font-family:var(--font-heading);font-size:12px;font-weight:700;color:var(--color-navy);letter-spacing:0.06em;margin-bottom:12px;">🏠 S2 固定コスト</div>
                     <div class="control-group">
                         <div class="control-label"><span>家賃 / 月</span><span class="control-val" id="v-s2-rent">¥350,000</span></div>
                         <input type="range" id="s-s2-rent" min="150000" max="800000" step="10000" value="350000" oninput="calcInvestment()">
@@ -815,7 +865,9 @@ input[type="range"]::-webkit-slider-thumb {
                         <div class="control-label"><span>人件費（バリスタ×人数）/ 月</span><span class="control-val" id="v-s2-staff">¥500,000</span></div>
                         <input type="range" id="s-s2-staff" min="200000" max="1200000" step="20000" value="500000" oninput="calcInvestment()">
                     </div>
-                    <div class="control-group">
+                </div>
+                <div>
+                    <div class="control-group" style="margin-top:28px;">
                         <div class="control-label"><span>光熱費・水道 / 月</span><span class="control-val" id="v-s2-utility">¥80,000</span></div>
                         <input type="range" id="s-s2-utility" min="30000" max="200000" step="5000" value="80000" oninput="calcInvestment()">
                     </div>
@@ -839,15 +891,23 @@ input[type="range"]::-webkit-slider-thumb {
             <div class="result-banner" id="s2-result-banner" style="background:linear-gradient(135deg,#059669,#047857);">
                 <h2>S2 MONTHLY PROFIT（予想）</h2>
                 <div class="result-big positive" id="r-s2-monthly-profit">¥0</div>
-                <div class="result-sub" id="r-s2-monthly-formula">カフェ利益 + グッズ利益</div>
-                <div class="result-grid">
+                <div class="result-sub" id="r-s2-monthly-formula">POP + BEAUTIFUL + グッズ − 固定コスト</div>
+                <div class="result-grid" style="grid-template-columns:repeat(4,1fr);">
                     <div class="result-item">
-                        <div class="ri-val" style="color:var(--color-cyan);" id="r-s2-cafe-rev">¥0</div>
-                        <div class="ri-label">カフェ売上</div>
+                        <div class="ri-val" style="color:var(--color-cyan);" id="r-s2-pop-total">¥0</div>
+                        <div class="ri-label">POP売上</div>
                     </div>
                     <div class="result-item">
-                        <div class="ri-val" style="color:var(--color-pink);" id="r-s2-cafe-profit">¥0</div>
-                        <div class="ri-label">カフェ利益</div>
+                        <div class="ri-val" style="color:var(--color-pink);" id="r-s2-beau-total">¥0</div>
+                        <div class="ri-label">BEAUTIFUL売上</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="ri-val" style="color:white;" id="r-s2-cafe-rev">¥0</div>
+                        <div class="ri-label">カフェ合計売上</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="ri-val" style="color:#fde68a;" id="r-s2-cafe-profit">¥0</div>
+                        <div class="ri-label">営業利益</div>
                     </div>
                 </div>
             </div>
@@ -1219,10 +1279,17 @@ function getS2Params() {
     return {
         seats: +document.getElementById('s-s2-seats').value,
         days: +document.getElementById('s-s2-days').value,
-        cups: +document.getElementById('s-s2-cups').value,
-        price: +document.getElementById('s-s2-price').value,
-        bean: +document.getElementById('s-s2-bean').value,
-        otherCost: +document.getElementById('s-s2-other').value,
+        // POP model
+        popCups: +document.getElementById('s-s2-pop-cups').value,
+        popPrice: +document.getElementById('s-s2-pop-price').value,
+        popBean: +document.getElementById('s-s2-pop-bean').value,
+        popOther: +document.getElementById('s-s2-pop-other').value,
+        // BEAUTIFUL model
+        beauCups: +document.getElementById('s-s2-beau-cups').value,
+        beauPrice: +document.getElementById('s-s2-beau-price').value,
+        beauBean: +document.getElementById('s-s2-beau-bean').value,
+        beauOther: +document.getElementById('s-s2-beau-other').value,
+        // Shared
         rent: +document.getElementById('s-s2-rent').value,
         staff: +document.getElementById('s-s2-staff').value,
         utility: +document.getElementById('s-s2-utility').value,
@@ -1235,19 +1302,29 @@ function getS2Params() {
     };
 }
 
-function calcS2Month(s, cupsOverride) {
-    const cups = cupsOverride || s.cups;
-    const cafeRev = cups * s.price * s.days;
-    const cafeCogs = cups * (s.bean + s.otherCost) * s.days;
+function calcS2Month(s, popCupsOvr, beauCupsOvr) {
+    const popCups = popCupsOvr || s.popCups;
+    const beauCups = beauCupsOvr || s.beauCups;
+    // POP
+    const popRev = popCups * s.popPrice * s.days;
+    const popCogs = popCups * (s.popBean + s.popOther) * s.days;
+    const popGross = popRev - popCogs;
+    // BEAUTIFUL
+    const beauRev = beauCups * s.beauPrice * s.days;
+    const beauCogs = beauCups * (s.beauBean + s.beauOther) * s.days;
+    const beauGross = beauRev - beauCogs;
+    // Combined cafe
+    const cafeRev = popRev + beauRev;
+    const cafeCogs = popCogs + beauCogs;
     const fixedCosts = s.rent + s.staff + s.utility + s.misc;
     const cafeProfit = cafeRev - cafeCogs - fixedCosts;
-
+    // Goods
     const goodsCost = s.goodsRev * s.goodsCogs;
     const goodsProfit = s.goodsRev - goodsCost;
-
     const totalProfit = cafeProfit + goodsProfit;
 
-    return { cafeRev, cafeCogs, fixedCosts, cafeProfit, goodsProfit, totalProfit, cups };
+    return { cafeRev, cafeCogs, fixedCosts, cafeProfit, goodsProfit, totalProfit,
+             popRev, popGross, beauRev, beauGross, popCups, beauCups };
 }
 
 function calcInvestment() {
@@ -1265,13 +1342,19 @@ function calcInvestment() {
 
     const s = getS2Params();
 
-    // Update S2 display values
+    // Update S2 display values — POP model
+    document.getElementById('v-s2-pop-cups').textContent = s.popCups;
+    document.getElementById('v-s2-pop-price').textContent = '\u00a5' + s.popPrice.toLocaleString();
+    document.getElementById('v-s2-pop-bean').textContent = '\u00a5' + s.popBean.toLocaleString();
+    document.getElementById('v-s2-pop-other').textContent = '\u00a5' + s.popOther.toLocaleString();
+    // BEAUTIFUL model
+    document.getElementById('v-s2-beau-cups').textContent = s.beauCups;
+    document.getElementById('v-s2-beau-price').textContent = '\u00a5' + s.beauPrice.toLocaleString();
+    document.getElementById('v-s2-beau-bean').textContent = '\u00a5' + s.beauBean.toLocaleString();
+    document.getElementById('v-s2-beau-other').textContent = '\u00a5' + s.beauOther.toLocaleString();
+    // Shared
     document.getElementById('v-s2-seats').textContent = s.seats;
     document.getElementById('v-s2-days').textContent = s.days;
-    document.getElementById('v-s2-cups').textContent = s.cups;
-    document.getElementById('v-s2-price').textContent = '\u00a5' + s.price.toLocaleString();
-    document.getElementById('v-s2-bean').textContent = '\u00a5' + s.bean.toLocaleString();
-    document.getElementById('v-s2-other').textContent = '\u00a5' + s.otherCost.toLocaleString();
     document.getElementById('v-s2-rent').textContent = '\u00a5' + s.rent.toLocaleString();
     document.getElementById('v-s2-staff').textContent = '\u00a5' + s.staff.toLocaleString();
     document.getElementById('v-s2-utility').textContent = '\u00a5' + s.utility.toLocaleString();
@@ -1305,13 +1388,21 @@ function calcInvestment() {
 
     // S2 base month P&L
     const s2Base = calcS2Month(s);
+    // Model summaries
+    document.getElementById('r-s2-pop-rev').textContent = fmt(s2Base.popRev);
+    document.getElementById('r-s2-pop-gross').textContent = fmt(s2Base.popGross);
+    document.getElementById('r-s2-beau-rev').textContent = fmt(s2Base.beauRev);
+    document.getElementById('r-s2-beau-gross').textContent = fmt(s2Base.beauGross);
+    // Banner
     const s2ProfitEl = document.getElementById('r-s2-monthly-profit');
     s2ProfitEl.textContent = fmt(s2Base.totalProfit);
     s2ProfitEl.className = 'result-big ' + (s2Base.totalProfit >= 0 ? 'positive' : 'negative');
+    document.getElementById('r-s2-pop-total').textContent = fmt(s2Base.popRev);
+    document.getElementById('r-s2-beau-total').textContent = fmt(s2Base.beauRev);
     document.getElementById('r-s2-cafe-rev').textContent = fmt(s2Base.cafeRev);
-    document.getElementById('r-s2-cafe-profit').textContent = fmt(s2Base.cafeProfit);
+    document.getElementById('r-s2-cafe-profit').textContent = fmt(s2Base.totalProfit);
     document.getElementById('r-s2-monthly-formula').textContent =
-        `\u30ab\u30d5\u30a7\u5229\u76ca ${fmt(s2Base.cafeProfit)} + \u30b0\u30c3\u30ba\u5229\u76ca ${fmt(s2Base.goodsProfit)} = ${fmt(s2Base.totalProfit)}`;
+        `POP ${fmt(s2Base.popGross)} + BEAUTIFUL ${fmt(s2Base.beauGross)} - \u56fa\u5b9a ${fmt(s2Base.fixedCosts)} + \u30b0\u30c3\u30ba ${fmt(s2Base.goodsProfit)} = ${fmt(s2Base.totalProfit)}`;
 
     // Calculate S1 pool
     let s1Pool = 0;
@@ -1346,8 +1437,9 @@ function calcInvestment() {
     let recoveryMonth = null;
 
     for (let i = 0; i < 48; i++) {
-        const cups = Math.min(Math.round(s.cups * Math.pow(1 + s.growth, i)), s.cupsCap);
-        const r = calcS2Month(s, cups);
+        const popC = Math.min(Math.round(s.popCups * Math.pow(1 + s.growth, i)), s.cupsCap);
+        const beauC = Math.min(Math.round(s.beauCups * Math.pow(1 + s.growth, i)), Math.round(s.cupsCap * 0.3));
+        const r = calcS2Month(s, popC, beauC);
         const monthProfit = r.totalProfit;
         const recoveryAmount = Math.max(0, Math.round(monthProfit * s.recoveryRate));
         const distributable = Math.max(0, monthProfit - recoveryAmount);
