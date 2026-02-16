@@ -843,8 +843,8 @@ input[type="range"]::-webkit-slider-thumb {
             <div class="card">
                 <h3>🎯 S2 Investment Target</h3>
                 <div class="control-group">
-                    <div class="control-label"><span>S2目標金額</span><span class="control-val" id="v-s2-target">¥2,000,000</span></div>
-                    <input type="range" id="s-s2-target" min="1000000" max="5000000" step="100000" value="2000000" oninput="forecast()">
+                    <div class="control-label"><span>S2目標金額</span><span class="control-val" id="v-s2-target">¥25,000,000</span></div>
+                    <input type="range" id="s-s2-target" min="15000000" max="40000000" step="1000000" value="25000000" oninput="forecast()">
                 </div>
                 <div class="control-group">
                     <div class="control-label"><span>S2 Pool Rate（Forecast用）</span><span class="control-val" id="v-s2-pool-forecast">100%</span></div>
@@ -915,7 +915,7 @@ input[type="range"]::-webkit-slider-thumb {
                     <strong>フェーズ：</strong>事業スケール<br>
                     <strong>場所：</strong>greekee中目黒店舗<br>
                     <strong>資金プール：</strong>事業利益のX%を S2 投資に配分<br>
-                    <strong>目的：</strong>最初の12-18ヶ月で¥2M を積立て、S2 の種資とする
+                    <strong>目的：</strong>S2出店資金（¥2,000〜3,000万）をプール
                 </p>
             </div>
             <div class="phase-arrow">→</div>
@@ -923,9 +923,9 @@ input[type="range"]::-webkit-slider-thumb {
                 <h4>🏪 S2: 1店舗目</h4>
                 <p>
                     <strong>フェーズ：</strong>投資回収<br>
-                    <strong>投資額：</strong>¥2,000,000<br>
-                    <strong>運営形態：</strong>POPX own shop<br>
-                    <strong>収益化：</strong>S2 からの売上を S1 投資に充当
+                    <strong>投資額：</strong>¥2,000〜3,000万<br>
+                    <strong>内訳：</strong>物件取得・内装・設備・運転資金<br>
+                    <strong>収益化：</strong>S2 店舗売上から投資回収
                 </p>
             </div>
             <div class="phase-arrow">→</div>
@@ -946,7 +946,7 @@ input[type="range"]::-webkit-slider-thumb {
                     <h4 style="font-family: var(--font-heading); font-size: 12px; font-weight: 700; color: var(--color-navy); margin-bottom: 12px;">S1フェーズ（Month 1-12）</h4>
                     <div style="background: #e3f2fd; border-radius: 8px; padding: 16px; border-left: 4px solid var(--color-navy);">
                         <div style="font-size: 12px; color: var(--color-navy); line-height: 1.6;">
-                            <strong>目標:</strong> S2 Fund ¥2,000,000 を積立て<br>
+                            <strong>目標:</strong> S2 Fund（¥2,000〜3,000万）を積立て<br>
                             <strong>達成条件:</strong> 月次 Pool Rate に基づいて合計事業利益から S2 プール分を配分<br>
                             <strong>予想到達月：</strong> <span id="recovery-s2-month" style="font-weight: 700; color: var(--color-cyan);">—</span><br>
                             <strong>予想 S2 Ready 日：</strong> <span id="recovery-s2-date" style="font-weight: 700; color: var(--color-cyan);">—</span>
@@ -958,9 +958,9 @@ input[type="range"]::-webkit-slider-thumb {
                     <h4 style="font-family: var(--font-heading); font-size: 12px; font-weight: 700; color: var(--color-navy); margin-bottom: 12px;">S2フェーズ（Month 13以降）</h4>
                     <div style="background: #f0f9ff; border-radius: 8px; padding: 16px; border-left: 4px solid var(--color-cyan);">
                         <div style="font-size: 12px; color: var(--color-navy); line-height: 1.6;">
-                            <strong>投資額：</strong> ¥2,000,000<br>
-                            <strong>運営形態：</strong> POPX 独立運営店舗<br>
-                            <strong>回収方針：</strong> S2 からの月次営業利益で ¥2M を18-24ヶ月で回収<br>
+                            <strong>投資額：</strong> ¥2,000〜3,000万<br>
+                            <strong>内訳：</strong> 物件保証金・内装工事・設備・運転資金<br>
+                            <strong>回収方針：</strong> S2 店舗の月次営業利益から投資回収<br>
                             <strong>推定回収月数：</strong> <span id="recovery-s2-payback" style="font-weight: 700; color: var(--color-cyan);">—</span> ヶ月
                         </div>
                     </div>
