@@ -338,46 +338,40 @@ input[type="range"]::-webkit-slider-thumb {
             </table>
         </div>
 
-        <!-- Revenue Split -->
-        <div class="section-title">Revenue Split（S2以降適用）</div>
+        <!-- Revenue Split - Interactive -->
+        <div class="section-title">Revenue Split（S2以降適用）<span style="font-size:10px;font-weight:400;text-transform:none;letter-spacing:0;margin-left:12px;color:#999;">スライダーで調整 → S1 Sim / S2 Recovery に即時反映</span></div>
 
         <div class="note-box" style="margin-bottom: 20px; background: #fef3c7; border-color: #f59e0b;">
-            <strong>S1フェーズでは分配なし：</strong>下記の分配比率はS2フェーズ（1店舗目開業後）から適用。S1では全額プールとなるため、この比率は「本来の分配額」として参考表示のみ。
+            <strong>S1フェーズでは分配なし：</strong>下記の分配比率はS2フェーズ（1店舗目開業後）から適用。S1では全額プールとなるため、この比率は「本来の分配額」として参考表示のみ。<br><strong>greekeeオーナーとリアルタイムで交渉しながら比率を調整できます。</strong>
         </div>
 
         <div class="card">
-            <h3>カフェ事業利益</h3>
+            <h3>カフェ事業利益 — POPX / greekee 分配</h3>
+            <div class="control-group" style="margin-bottom:8px;">
+                <div class="control-label"><span>POPX 取り分</span><span class="control-val" id="v-t1-cafe-popx">80%</span></div>
+                <input type="range" id="s-t1-cafe-popx" min="0" max="100" step="5" value="80" oninput="syncSplitFromTab1()">
+            </div>
             <div class="split-bar-container">
                 <div class="split-bar">
-                    <div class="split-popx" style="width:80%">POPX 80%</div>
-                    <div class="split-greekee" style="width:20%">greekee 20%</div>
+                    <div class="split-popx" id="bar-t1-cafe-popx" style="width:80%">POPX 80%</div>
+                    <div class="split-greekee" id="bar-t1-cafe-gk" style="width:20%">greekee 20%</div>
                 </div>
                 <div class="split-label"><span>事業運営・投資・クリエイティブ</span><span>場所提供・世界観</span></div>
             </div>
         </div>
 
-        <div class="pattern-grid">
-            <div class="card" style="margin-bottom:0;">
-                <h3>グッズ事業利益 — Pattern A</h3>
-                <p style="font-size:13px;color:#666;margin-bottom:16px;line-height:1.6;">POPXはクリエイティブ・デジタル開発のみ。<br>グッズ製造・在庫・販売はgreekee側。</p>
-                <div class="split-bar-container">
-                    <div class="split-bar">
-                        <div class="split-popx" style="width:20%">20%</div>
-                        <div class="split-greekee" style="width:80%">greekee 80%</div>
-                    </div>
-                    <div class="split-label"><span>クリエイティブ費</span><span>IP + 製造 + 販売オペレーション</span></div>
-                </div>
+        <div class="card">
+            <h3>グッズ事業利益 — POPX / greekee 分配</h3>
+            <div class="control-group" style="margin-bottom:8px;">
+                <div class="control-label"><span>POPX 取り分</span><span class="control-val" id="v-t1-goods-popx">20%</span></div>
+                <input type="range" id="s-t1-goods-popx" min="0" max="100" step="5" value="20" oninput="syncSplitFromTab1()">
             </div>
-            <div class="card" style="margin-bottom:0;">
-                <h3>グッズ事業利益 — Pattern B</h3>
-                <p style="font-size:13px;color:#666;margin-bottom:16px;line-height:1.6;">POPXが企画・制作・在庫・販売を全て担当。<br>vanitystore / pattythree のノウハウ活用。</p>
-                <div class="split-bar-container">
-                    <div class="split-bar">
-                        <div class="split-popx" style="width:70%">POPX 70%</div>
-                        <div class="split-greekee" style="width:30%">30%</div>
-                    </div>
-                    <div class="split-label"><span>企画 + 制作 + 在庫 + 販売</span><span>IPライセンス</span></div>
+            <div class="split-bar-container">
+                <div class="split-bar">
+                    <div class="split-popx" id="bar-t1-goods-popx" style="width:20%">POPX 20%</div>
+                    <div class="split-greekee" id="bar-t1-goods-gk" style="width:80%">greekee 80%</div>
                 </div>
+                <div class="split-label"><span>クリエイティブ / 製造 / 販売</span><span>IP / オペレーション</span></div>
             </div>
         </div>
 
@@ -474,7 +468,7 @@ input[type="range"]::-webkit-slider-thumb {
                 <div>
                     <div class="control-group">
                         <div class="control-label"><span>カフェ利益 POPX取り分</span><span class="control-val" id="v-s1-cafe-popx">80%</span></div>
-                        <input type="range" id="s-s1-cafe-popx" min="0" max="100" step="5" value="80" oninput="simulate()">
+                        <input type="range" id="s-s1-cafe-popx" min="0" max="100" step="5" value="80" oninput="syncSplitFromS1()">
                     </div>
                     <div class="split-bar-container">
                         <div class="split-bar">
@@ -486,7 +480,7 @@ input[type="range"]::-webkit-slider-thumb {
                 <div>
                     <div class="control-group">
                         <div class="control-label"><span>グッズ利益 POPX取り分</span><span class="control-val" id="v-s1-goods-popx">20%</span></div>
-                        <input type="range" id="s-s1-goods-popx" min="0" max="100" step="5" value="20" oninput="simulate()">
+                        <input type="range" id="s-s1-goods-popx" min="0" max="100" step="5" value="20" oninput="syncSplitFromS1()">
                     </div>
                     <div class="split-bar-container">
                         <div class="split-bar">
@@ -1400,6 +1394,42 @@ function calcInvestment() {
     document.getElementById('recovery-recovered').textContent = fmt(Math.min(cumulativeRecovered, totalInvestment));
     document.getElementById('recovery-months').textContent = recoveryMonth ? `${recoveryMonth} \u30f6\u6708` : '48\u30f6\u6708\u4ee5\u4e0a';
     document.getElementById('recovery-remaining').textContent = fmt(Math.max(0, totalInvestment - cumulativeRecovered));
+}
+
+// Sync split sliders between Tab1, S1, and S2
+function syncSplitFromTab1() {
+    const cafePct = +document.getElementById('s-t1-cafe-popx').value;
+    const goodsPct = +document.getElementById('s-t1-goods-popx').value;
+    // Update Tab1 display
+    updateSplitDisplay('t1', cafePct, goodsPct);
+    // Sync to S1 sliders
+    document.getElementById('s-s1-cafe-popx').value = cafePct;
+    document.getElementById('s-s1-goods-popx').value = goodsPct;
+    // Trigger recalculations
+    simulate();
+}
+
+function syncSplitFromS1() {
+    const cafePct = +document.getElementById('s-s1-cafe-popx').value;
+    const goodsPct = +document.getElementById('s-s1-goods-popx').value;
+    // Sync to Tab1 sliders
+    document.getElementById('s-t1-cafe-popx').value = cafePct;
+    document.getElementById('s-t1-goods-popx').value = goodsPct;
+    updateSplitDisplay('t1', cafePct, goodsPct);
+    simulate();
+}
+
+function updateSplitDisplay(prefix, cafePct, goodsPct) {
+    document.getElementById('v-' + prefix + '-cafe-popx').textContent = cafePct + '%';
+    document.getElementById('bar-' + prefix + '-cafe-popx').style.width = cafePct + '%';
+    document.getElementById('bar-' + prefix + '-cafe-popx').textContent = 'POPX ' + cafePct + '%';
+    document.getElementById('bar-' + prefix + '-cafe-gk').style.width = (100 - cafePct) + '%';
+    document.getElementById('bar-' + prefix + '-cafe-gk').textContent = 'greekee ' + (100 - cafePct) + '%';
+    document.getElementById('v-' + prefix + '-goods-popx').textContent = goodsPct + '%';
+    document.getElementById('bar-' + prefix + '-goods-popx').style.width = goodsPct + '%';
+    document.getElementById('bar-' + prefix + '-goods-popx').textContent = 'POPX ' + goodsPct + '%';
+    document.getElementById('bar-' + prefix + '-goods-gk').style.width = (100 - goodsPct) + '%';
+    document.getElementById('bar-' + prefix + '-goods-gk').textContent = 'greekee ' + (100 - goodsPct) + '%';
 }
 
 // Init
