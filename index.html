@@ -267,7 +267,6 @@ input[type="range"]::-webkit-slider-thumb {
     <div class="tab-bar">
         <button class="tab-btn active" onclick="showTab('structure')">Business Structure</button>
         <button class="tab-btn" onclick="showTab('simulation')">S1 Revenue Sim</button>
-        <button class="tab-btn" onclick="showTab('yearly')">12-Month Forecast</button>
         <button class="tab-btn" onclick="showTab('recovery')">S2 Investment &amp; Recovery</button>
     </div>
 
@@ -349,7 +348,7 @@ input[type="range"]::-webkit-slider-thumb {
             <h3>カフェ事業利益 — POPX / greekee 分配</h3>
             <div class="control-group" style="margin-bottom:8px;">
                 <div class="control-label"><span>POPX 取り分</span><span class="control-val" id="v-t1-cafe-popx">80%</span></div>
-                <input type="range" id="s-t1-cafe-popx" min="0" max="100" step="5" value="80" oninput="syncSplitFromTab1()">
+                <input type="range" id="s-t1-cafe-popx" min="0" max="100" step="5" value="80" oninput="syncSplitFromTab1(); saveAllSliders();">
             </div>
             <div class="split-bar-container">
                 <div class="split-bar">
@@ -364,7 +363,7 @@ input[type="range"]::-webkit-slider-thumb {
             <h3>グッズ事業利益 — POPX / greekee 分配</h3>
             <div class="control-group" style="margin-bottom:8px;">
                 <div class="control-label"><span>POPX 取り分</span><span class="control-val" id="v-t1-goods-popx">20%</span></div>
-                <input type="range" id="s-t1-goods-popx" min="0" max="100" step="5" value="20" oninput="syncSplitFromTab1()">
+                <input type="range" id="s-t1-goods-popx" min="0" max="100" step="5" value="20" oninput="syncSplitFromTab1(); saveAllSliders();">
             </div>
             <div class="split-bar-container">
                 <div class="split-bar">
@@ -395,23 +394,23 @@ input[type="range"]::-webkit-slider-thumb {
                 <h3>☕ カフェ — パラメータ</h3>
                 <div class="control-group">
                     <div class="control-label"><span>営業日数 / 月</span><span class="control-val" id="v-days">20</span></div>
-                    <input type="range" id="s-days" min="8" max="28" value="20" oninput="simulate()">
+                    <input type="range" id="s-days" min="8" max="28" value="20" oninput="simulate(); saveAllSliders();">
                 </div>
                 <div class="control-group">
                     <div class="control-label"><span>1日あたり杯数</span><span class="control-val" id="v-cups">18</span></div>
-                    <input type="range" id="s-cups" min="5" max="40" value="18" oninput="simulate()">
+                    <input type="range" id="s-cups" min="5" max="40" value="18" oninput="simulate(); saveAllSliders();">
                 </div>
                 <div class="control-group">
                     <div class="control-label"><span>平均単価（コーヒー）</span><span class="control-val" id="v-price">¥1,800</span></div>
-                    <input type="range" id="s-price" min="800" max="4000" step="100" value="1800" oninput="simulate()">
+                    <input type="range" id="s-price" min="800" max="4000" step="100" value="1800" oninput="simulate(); saveAllSliders();">
                 </div>
                 <div class="control-group">
                     <div class="control-label"><span>豆原価 / 杯</span><span class="control-val" id="v-bean">¥450</span></div>
-                    <input type="range" id="s-bean" min="200" max="900" step="10" value="450" oninput="simulate()">
+                    <input type="range" id="s-bean" min="200" max="900" step="10" value="450" oninput="simulate(); saveAllSliders();">
                 </div>
                 <div class="control-group">
                     <div class="control-label"><span>その他原価 / 杯（水・カップ等）</span><span class="control-val" id="v-other">¥50</span></div>
-                    <input type="range" id="s-other" min="20" max="150" step="10" value="50" oninput="simulate()">
+                    <input type="range" id="s-other" min="20" max="150" step="10" value="50" oninput="simulate(); saveAllSliders();">
                 </div>
             </div>
 
@@ -419,19 +418,19 @@ input[type="range"]::-webkit-slider-thumb {
                 <h3>🏠 固定コスト（トップオフ）</h3>
                 <div class="control-group">
                     <div class="control-label"><span>家賃（greekeeへ月額固定）</span><span class="control-val" id="v-rent">¥80,000</span></div>
-                    <input type="range" id="s-rent" min="30000" max="200000" step="5000" value="80000" oninput="simulate()">
+                    <input type="range" id="s-rent" min="30000" max="200000" step="5000" value="80000" oninput="simulate(); saveAllSliders();">
                 </div>
                 <div class="control-group">
                     <div class="control-label"><span>バリスタ業務委託費 / 月</span><span class="control-val" id="v-barista">¥120,000</span></div>
-                    <input type="range" id="s-barista" min="50000" max="300000" step="5000" value="120000" oninput="simulate()">
+                    <input type="range" id="s-barista" min="50000" max="300000" step="5000" value="120000" oninput="simulate(); saveAllSliders();">
                 </div>
                 <div class="control-group">
                     <div class="control-label"><span>消耗品・雑費 / 月</span><span class="control-val" id="v-misc">¥30,000</span></div>
-                    <input type="range" id="s-misc" min="10000" max="80000" step="5000" value="30000" oninput="simulate()">
+                    <input type="range" id="s-misc" min="10000" max="80000" step="5000" value="30000" oninput="simulate(); saveAllSliders();">
                 </div>
                 <div class="control-group">
                     <div class="control-label"><span>送料・関税 / 月</span><span class="control-val" id="v-shipping">¥20,000</span></div>
-                    <input type="range" id="s-shipping" min="5000" max="50000" step="5000" value="20000" oninput="simulate()">
+                    <input type="range" id="s-shipping" min="5000" max="50000" step="5000" value="20000" oninput="simulate(); saveAllSliders();">
                 </div>
             </div>
         </div>
@@ -443,11 +442,11 @@ input[type="range"]::-webkit-slider-thumb {
                 <div>
                     <div class="control-group">
                         <div class="control-label"><span>グッズ月間売上</span><span class="control-val" id="v-goods-rev">¥200,000</span></div>
-                        <input type="range" id="s-goods-rev" min="0" max="1000000" step="10000" value="200000" oninput="simulate()">
+                        <input type="range" id="s-goods-rev" min="0" max="1000000" step="10000" value="200000" oninput="simulate(); saveAllSliders();">
                     </div>
                     <div class="control-group">
                         <div class="control-label"><span>グッズ原価率</span><span class="control-val" id="v-goods-cogs">35%</span></div>
-                        <input type="range" id="s-goods-cogs" min="15" max="60" value="35" oninput="simulate()">
+                        <input type="range" id="s-goods-cogs" min="15" max="60" value="35" oninput="simulate(); saveAllSliders();">
                     </div>
                 </div>
                 <div>
@@ -468,7 +467,7 @@ input[type="range"]::-webkit-slider-thumb {
                 <div>
                     <div class="control-group">
                         <div class="control-label"><span>カフェ利益 POPX取り分</span><span class="control-val" id="v-s1-cafe-popx">80%</span></div>
-                        <input type="range" id="s-s1-cafe-popx" min="0" max="100" step="5" value="80" oninput="syncSplitFromS1()">
+                        <input type="range" id="s-s1-cafe-popx" min="0" max="100" step="5" value="80" oninput="syncSplitFromS1(); saveAllSliders();">
                     </div>
                     <div class="split-bar-container">
                         <div class="split-bar">
@@ -480,7 +479,7 @@ input[type="range"]::-webkit-slider-thumb {
                 <div>
                     <div class="control-group">
                         <div class="control-label"><span>グッズ利益 POPX取り分</span><span class="control-val" id="v-s1-goods-popx">20%</span></div>
-                        <input type="range" id="s-s1-goods-popx" min="0" max="100" step="5" value="20" oninput="syncSplitFromS1()">
+                        <input type="range" id="s-s1-goods-popx" min="0" max="100" step="5" value="20" oninput="syncSplitFromS1(); saveAllSliders();">
                     </div>
                     <div class="split-bar-container">
                         <div class="split-bar">
@@ -588,14 +587,9 @@ input[type="range"]::-webkit-slider-thumb {
                 <div class="cost-row" style="border:none;font-size:18px;"><span class="cost-label" style="font-weight:800;color:#92400e;">= S2プール額（全額）</span><span class="cost-value" style="color:#92400e;font-size:20px;" id="w-s2-pool">¥0</span></div>
                 <div class="cost-row" style="border:none;font-size:12px;"><span class="cost-label" style="color:#92400e;">※ POPX回収 = 豆原価+その他原価（トップオフ経由）</span><span class="cost-value" style="color:#92400e;" id="w-popx-cogs-note">¥0</span></div>
             </div>
-        </div>
 
-    </div>
-
-    <!-- ==================== TAB 3: 12-MONTH FORECAST ==================== -->
-    <div class="tab-panel" id="tab-yearly">
-
-        <div class="section-title">S1 12-Month Forecast — S2 Fund Accumulation</div>
+        <!-- ==================== MERGED: 12-MONTH FORECAST ==================== -->
+        <div class="section-title" style="margin-top:40px;">S1 12-Month Forecast — S2 Fund Accumulation</div>
 
         <div class="note-box">
             S1フェーズ12ヶ月の成長予測。事業利益は全額S2プール。POPXは豆原価+その他原価をトップオフ経由で回収。
@@ -606,22 +600,22 @@ input[type="range"]::-webkit-slider-thumb {
                 <h3>📈 成長パラメータ</h3>
                 <div class="control-group">
                     <div class="control-label"><span>カフェ杯数 月次成長率</span><span class="control-val" id="v-cafe-growth">5%</span></div>
-                    <input type="range" id="s-cafe-growth" min="0" max="20" value="5" oninput="forecast()">
+                    <input type="range" id="s-cafe-growth" min="0" max="20" value="5" oninput="forecast(); saveAllSliders();">
                 </div>
                 <div class="control-group">
                     <div class="control-label"><span>グッズ売上 月次成長率</span><span class="control-val" id="v-goods-growth">8%</span></div>
-                    <input type="range" id="s-goods-growth" min="0" max="30" value="8" oninput="forecast()">
+                    <input type="range" id="s-goods-growth" min="0" max="30" value="8" oninput="forecast(); saveAllSliders();">
                 </div>
                 <div class="control-group">
                     <div class="control-label"><span>カフェ杯数上限 / 日</span><span class="control-val" id="v-cups-cap">30</span></div>
-                    <input type="range" id="s-cups-cap" min="15" max="50" value="30" oninput="forecast()">
+                    <input type="range" id="s-cups-cap" min="15" max="50" value="30" oninput="forecast(); saveAllSliders();">
                 </div>
             </div>
             <div class="card">
                 <h3>🎯 S2 Investment Target</h3>
                 <div class="control-group">
                     <div class="control-label"><span>S2目標金額</span><span class="control-val" id="v-s2-target">¥25,000,000</span></div>
-                    <input type="range" id="s-s2-target" min="15000000" max="40000000" step="1000000" value="25000000" oninput="forecast()">
+                    <input type="range" id="s-s2-target" min="15000000" max="40000000" step="1000000" value="25000000" oninput="forecast(); saveAllSliders();">
                 </div>
                 <div class="note-box" style="margin:8px 0 0 0; font-size:12px;">
                     S1プールだけでは到達不可能 → S2投資タブで POPX・greekee本体の投資シミュレーション
@@ -672,7 +666,8 @@ input[type="range"]::-webkit-slider-thumb {
 
     </div>
 
-    <!-- ==================== TAB 4: S2 INVESTMENT & RECOVERY ==================== -->
+
+        <!-- ==================== TAB 4: S2 INVESTMENT & RECOVERY ==================== -->
     <div class="tab-panel" id="tab-recovery">
 
         <div class="section-title">S2 Investment & Recovery Simulation</div>
@@ -717,7 +712,7 @@ input[type="range"]::-webkit-slider-thumb {
                 <h3 style="color:#92400e;">💰 S1 プール（自動計算）</h3>
                 <div class="control-group">
                     <div class="control-label"><span>S1運営期間</span><span class="control-val" id="v-s1-months">12</span>ヶ月</div>
-                    <input type="range" id="s-s1-months" min="6" max="24" value="12" oninput="calcInvestment()">
+                    <input type="range" id="s-s1-months" min="6" max="24" value="12" oninput="calcInvestment(); saveAllSliders();">
                 </div>
                 <div style="background:#fef3c7;border-radius:8px;padding:12px;text-align:center;margin-top:8px;">
                     <div style="font-size:11px;color:#92400e;margin-bottom:4px;">S1累積プール額</div>
@@ -728,22 +723,22 @@ input[type="range"]::-webkit-slider-thumb {
                 <h3 style="color:var(--color-navy);">🏢 POPX本体 投資</h3>
                 <div class="control-group">
                     <div class="control-label"><span>投資額</span><span class="control-val" id="v-popx-invest">¥10,000,000</span></div>
-                    <input type="range" id="s-popx-invest" min="0" max="25000000" step="500000" value="10000000" oninput="calcInvestment()">
+                    <input type="range" id="s-popx-invest" min="0" max="25000000" step="500000" value="10000000" oninput="calcInvestment(); saveAllSliders();">
                 </div>
                 <div class="control-group">
                     <div class="control-label"><span>投資タイミング</span><span class="control-val" id="v-popx-invest-timing">S1終了時</span></div>
-                    <input type="range" id="s-popx-invest-timing" min="6" max="24" value="12" oninput="calcInvestment()">
+                    <input type="range" id="s-popx-invest-timing" min="6" max="24" value="12" oninput="calcInvestment(); saveAllSliders();">
                 </div>
             </div>
             <div class="invest-card gk-card">
                 <h3 style="color:var(--color-pink);">🏢 greekee本体 投資</h3>
                 <div class="control-group">
                     <div class="control-label"><span>投資額</span><span class="control-val" id="v-gk-invest">¥10,000,000</span></div>
-                    <input type="range" id="s-gk-invest" min="0" max="25000000" step="500000" value="10000000" oninput="calcInvestment()">
+                    <input type="range" id="s-gk-invest" min="0" max="25000000" step="500000" value="10000000" oninput="calcInvestment(); saveAllSliders();">
                 </div>
                 <div class="control-group">
                     <div class="control-label"><span>投資タイミング</span><span class="control-val" id="v-gk-invest-timing">S1終了時</span></div>
-                    <input type="range" id="s-gk-invest-timing" min="6" max="24" value="12" oninput="calcInvestment()">
+                    <input type="range" id="s-gk-invest-timing" min="6" max="24" value="12" oninput="calcInvestment(); saveAllSliders();">
                 </div>
             </div>
         </div>
@@ -785,21 +780,21 @@ input[type="range"]::-webkit-slider-thumb {
                     <div>
                         <div class="control-group">
                             <div class="control-label"><span>1日あたり杯数</span><span class="control-val" id="v-s2-pop-cups">40</span></div>
-                            <input type="range" id="s-s2-pop-cups" min="10" max="120" value="40" oninput="calcInvestment()">
+                            <input type="range" id="s-s2-pop-cups" min="10" max="120" value="40" oninput="calcInvestment(); saveAllSliders();">
                         </div>
                         <div class="control-group">
                             <div class="control-label"><span>平均単価</span><span class="control-val" id="v-s2-pop-price">¥1,500</span></div>
-                            <input type="range" id="s-s2-pop-price" min="1200" max="6000" step="100" value="1500" oninput="calcInvestment()">
+                            <input type="range" id="s-s2-pop-price" min="1200" max="6000" step="100" value="1500" oninput="calcInvestment(); saveAllSliders();">
                         </div>
                     </div>
                     <div>
                         <div class="control-group">
                             <div class="control-label"><span>豆原価 / 杯</span><span class="control-val" id="v-s2-pop-bean">¥350</span></div>
-                            <input type="range" id="s-s2-pop-bean" min="150" max="800" step="10" value="350" oninput="calcInvestment()">
+                            <input type="range" id="s-s2-pop-bean" min="150" max="800" step="10" value="350" oninput="calcInvestment(); saveAllSliders();">
                         </div>
                         <div class="control-group">
                             <div class="control-label"><span>その他原価 / 杯</span><span class="control-val" id="v-s2-pop-other">¥50</span></div>
-                            <input type="range" id="s-s2-pop-other" min="20" max="200" step="10" value="50" oninput="calcInvestment()">
+                            <input type="range" id="s-s2-pop-other" min="20" max="200" step="10" value="50" oninput="calcInvestment(); saveAllSliders();">
                         </div>
                     </div>
                 </div>
@@ -818,30 +813,40 @@ input[type="range"]::-webkit-slider-thumb {
                 <div class="card-grid" style="margin-bottom:0;">
                     <div>
                         <div class="control-group">
-                            <div class="control-label"><span>1日あたり組数</span><span class="control-val" id="v-s2-beau-cups">5</span></div>
-                            <input type="range" id="s-s2-beau-cups" min="1" max="20" value="5" oninput="calcInvestment()">
+                            <div class="control-label"><span>1回あたりの人数</span><span class="control-val" id="v-s2-beau-persons">3</span>人</div>
+                            <input type="range" id="s-s2-beau-persons" min="1" max="10" value="3" oninput="calcInvestment(); saveAllSliders();">
                         </div>
                         <div class="control-group">
-                            <div class="control-label"><span>平均単価</span><span class="control-val" id="v-s2-beau-price">¥10,000</span></div>
-                            <input type="range" id="s-s2-beau-price" min="8000" max="15000" step="500" value="10000" oninput="calcInvestment()">
+                            <div class="control-label"><span>1日の回転数</span><span class="control-val" id="v-s2-beau-rotations">5</span>回<span style="font-size:10px;color:#999;margin-left:4px;">（45分/回 × 最大16回）</span></div>
+                            <input type="range" id="s-s2-beau-rotations" min="1" max="16" value="5" oninput="calcInvestment(); saveAllSliders();">
+                        </div>
+                        <div class="control-group">
+                            <div class="control-label"><span>単価（一人あたり）</span><span class="control-val" id="v-s2-beau-price">¥10,000</span></div>
+                            <input type="range" id="s-s2-beau-price" min="8000" max="15000" step="500" value="10000" oninput="calcInvestment(); saveAllSliders();">
                         </div>
                     </div>
                     <div>
                         <div class="control-group">
-                            <div class="control-label"><span>原価 / 組</span><span class="control-val" id="v-s2-beau-bean">¥2,000</span></div>
-                            <input type="range" id="s-s2-beau-bean" min="500" max="5000" step="100" value="2000" oninput="calcInvestment()">
+                            <div class="control-label"><span>原価 / セッション</span><span class="control-val" id="v-s2-beau-bean">¥2,000</span></div>
+                            <input type="range" id="s-s2-beau-bean" min="500" max="5000" step="100" value="2000" oninput="calcInvestment(); saveAllSliders();">
                         </div>
                         <div class="control-group">
-                            <div class="control-label"><span>その他原価 / 組</span><span class="control-val" id="v-s2-beau-other">¥500</span></div>
-                            <input type="range" id="s-s2-beau-other" min="100" max="2000" step="50" value="500" oninput="calcInvestment()">
+                            <div class="control-label"><span>その他原価 / セッション</span><span class="control-val" id="v-s2-beau-other">¥500</span></div>
+                            <input type="range" id="s-s2-beau-other" min="100" max="2000" step="50" value="500" oninput="calcInvestment(); saveAllSliders();">
                         </div>
                     </div>
                 </div>
-                <div style="background:#f8f9fc;border-radius:8px;padding:10px 16px;margin-top:12px;display:flex;justify-content:space-between;align-items:center;">
-                    <span style="font-size:12px;color:#666;">BEAUTIFUL月間売上</span>
-                    <span style="font-family:var(--font-heading);font-size:18px;font-weight:700;color:var(--color-navy);" id="r-s2-beau-rev">¥0</span>
-                    <span style="font-size:12px;color:#666;">BEAUTIFUL月間粗利</span>
-                    <span style="font-family:var(--font-heading);font-size:18px;font-weight:700;color:#059669;" id="r-s2-beau-gross">¥0</span>
+                <div style="background:#f8f9fc;border-radius:8px;padding:10px 16px;margin-top:12px;">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+                        <span style="font-size:11px;color:#999;">1日あたり</span>
+                        <span style="font-family:var(--font-heading);font-size:13px;font-weight:700;color:var(--color-pink);" id="r-s2-beau-daily-summary">3人 × 5回 = 15人</span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;">
+                        <span style="font-size:12px;color:#666;">BEAUTIFUL月間売上</span>
+                        <span style="font-family:var(--font-heading);font-size:18px;font-weight:700;color:var(--color-navy);" id="r-s2-beau-rev">¥0</span>
+                        <span style="font-size:12px;color:#666;">BEAUTIFUL月間粗利</span>
+                        <span style="font-family:var(--font-heading);font-size:18px;font-weight:700;color:#059669;" id="r-s2-beau-gross">¥0</span>
+                    </div>
                 </div>
             </div>
 
@@ -851,38 +856,38 @@ input[type="range"]::-webkit-slider-thumb {
                     <div style="font-family:var(--font-heading);font-size:12px;font-weight:700;color:var(--color-navy);letter-spacing:0.06em;margin-bottom:12px;">🏠 S2 共通固定コスト</div>
                     <div class="control-group">
                         <div class="control-label"><span>営業日数 / 月</span><span class="control-val" id="v-s2-days">25</span></div>
-                        <input type="range" id="s-s2-days" min="15" max="30" value="25" oninput="calcInvestment()">
+                        <input type="range" id="s-s2-days" min="15" max="30" value="25" oninput="calcInvestment(); saveAllSliders();">
                     </div>
                     <div class="control-group">
                         <div class="control-label"><span>座席数</span><span class="control-val" id="v-s2-seats">15</span></div>
-                        <input type="range" id="s-s2-seats" min="8" max="40" value="15" oninput="calcInvestment()">
+                        <input type="range" id="s-s2-seats" min="8" max="40" value="15" oninput="calcInvestment(); saveAllSliders();">
                     </div>
                     <div class="control-group">
                         <div class="control-label"><span>家賃 / 月</span><span class="control-val" id="v-s2-rent">¥350,000</span></div>
-                        <input type="range" id="s-s2-rent" min="150000" max="800000" step="10000" value="350000" oninput="calcInvestment()">
+                        <input type="range" id="s-s2-rent" min="150000" max="800000" step="10000" value="350000" oninput="calcInvestment(); saveAllSliders();">
                     </div>
                     <div class="control-group">
                         <div class="control-label"><span>人件費（バリスタ×人数）/ 月</span><span class="control-val" id="v-s2-staff">¥500,000</span></div>
-                        <input type="range" id="s-s2-staff" min="200000" max="1200000" step="20000" value="500000" oninput="calcInvestment()">
+                        <input type="range" id="s-s2-staff" min="200000" max="1200000" step="20000" value="500000" oninput="calcInvestment(); saveAllSliders();">
                     </div>
                 </div>
                 <div>
                     <div class="control-group" style="margin-top:28px;">
                         <div class="control-label"><span>光熱費・水道 / 月</span><span class="control-val" id="v-s2-utility">¥80,000</span></div>
-                        <input type="range" id="s-s2-utility" min="30000" max="200000" step="5000" value="80000" oninput="calcInvestment()">
+                        <input type="range" id="s-s2-utility" min="30000" max="200000" step="5000" value="80000" oninput="calcInvestment(); saveAllSliders();">
                     </div>
                     <div class="control-group">
                         <div class="control-label"><span>消耗品・雑費 / 月</span><span class="control-val" id="v-s2-misc">¥50,000</span></div>
-                        <input type="range" id="s-s2-misc" min="20000" max="150000" step="5000" value="50000" oninput="calcInvestment()">
+                        <input type="range" id="s-s2-misc" min="20000" max="150000" step="5000" value="50000" oninput="calcInvestment(); saveAllSliders();">
                     </div>
                     <div style="font-family:var(--font-heading);font-size:12px;font-weight:700;color:var(--color-navy);letter-spacing:0.06em;margin:16px 0 12px;">🎁 S2 グッズ</div>
                     <div class="control-group">
                         <div class="control-label"><span>グッズ月間売上</span><span class="control-val" id="v-s2-goods-rev">¥500,000</span></div>
-                        <input type="range" id="s-s2-goods-rev" min="0" max="2000000" step="50000" value="500000" oninput="calcInvestment()">
+                        <input type="range" id="s-s2-goods-rev" min="0" max="2000000" step="50000" value="500000" oninput="calcInvestment(); saveAllSliders();">
                     </div>
                     <div class="control-group">
                         <div class="control-label"><span>グッズ原価率</span><span class="control-val" id="v-s2-goods-cogs">35%</span></div>
-                        <input type="range" id="s-s2-goods-cogs" min="15" max="60" value="35" oninput="calcInvestment()">
+                        <input type="range" id="s-s2-goods-cogs" min="15" max="60" value="35" oninput="calcInvestment(); saveAllSliders();">
                     </div>
                 </div>
             </div>
@@ -919,7 +924,7 @@ input[type="range"]::-webkit-slider-thumb {
                     <div>
                         <div class="control-group">
                             <div class="control-label"><span>カフェ利益 POPX取り分</span><span class="control-val" id="v-s2-cafe-popx">80%</span></div>
-                            <input type="range" id="s-s2-cafe-popx" min="0" max="100" step="5" value="80" oninput="calcInvestment()">
+                            <input type="range" id="s-s2-cafe-popx" min="0" max="100" step="5" value="80" oninput="calcInvestment(); saveAllSliders();">
                         </div>
                         <div class="split-bar-container">
                             <div class="split-bar">
@@ -931,7 +936,7 @@ input[type="range"]::-webkit-slider-thumb {
                     <div>
                         <div class="control-group">
                             <div class="control-label"><span>グッズ利益 POPX取り分</span><span class="control-val" id="v-s2-goods-popx">70%</span></div>
-                            <input type="range" id="s-s2-goods-popx" min="0" max="100" step="5" value="70" oninput="calcInvestment()">
+                            <input type="range" id="s-s2-goods-popx" min="0" max="100" step="5" value="70" oninput="calcInvestment(); saveAllSliders();">
                         </div>
                         <div class="split-bar-container">
                             <div class="split-bar">
@@ -949,17 +954,17 @@ input[type="range"]::-webkit-slider-thumb {
                     <div style="font-family:var(--font-heading);font-size:12px;font-weight:700;color:var(--color-navy);letter-spacing:0.06em;margin-bottom:12px;">📈 成長 &amp; 回収</div>
                     <div class="control-group">
                         <div class="control-label"><span>S2 杯数成長率 / 月</span><span class="control-val" id="v-s2-growth">3%</span></div>
-                        <input type="range" id="s-s2-growth" min="0" max="15" value="3" oninput="calcInvestment()">
+                        <input type="range" id="s-s2-growth" min="0" max="15" value="3" oninput="calcInvestment(); saveAllSliders();">
                     </div>
                     <div class="control-group">
                         <div class="control-label"><span>S2 杯数上限 / 日</span><span class="control-val" id="v-s2-cups-cap">80</span></div>
-                        <input type="range" id="s-s2-cups-cap" min="30" max="150" value="80" oninput="calcInvestment()">
+                        <input type="range" id="s-s2-cups-cap" min="30" max="150" value="80" oninput="calcInvestment(); saveAllSliders();">
                     </div>
                 </div>
                 <div>
                     <div class="control-group">
                         <div class="control-label"><span>投資回収充当率</span><span class="control-val" id="v-s2-recovery-rate">60%</span></div>
-                        <input type="range" id="s-s2-recovery-rate" min="30" max="100" step="5" value="60" oninput="calcInvestment()">
+                        <input type="range" id="s-s2-recovery-rate" min="30" max="100" step="5" value="60" oninput="calcInvestment(); saveAllSliders();">
                     </div>
                     <div class="note-box" style="margin:0;font-size:11px;">
                         営業利益の何%を投資回収に充てるか（残りはレベニューシェアとして分配）
@@ -1061,8 +1066,7 @@ function showTab(id) {
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
     document.getElementById('tab-' + id).classList.add('active');
     event.target.classList.add('active');
-    if (id === 'simulation') simulate();
-    if (id === 'yearly') forecast();
+    if (id === 'simulation') { simulate(); forecast(); }
     if (id === 'recovery') calcInvestment();
 }
 
@@ -1285,7 +1289,8 @@ function getS2Params() {
         popBean: +document.getElementById('s-s2-pop-bean').value,
         popOther: +document.getElementById('s-s2-pop-other').value,
         // BEAUTIFUL model
-        beauCups: +document.getElementById('s-s2-beau-cups').value,
+        beauPersons: +document.getElementById('s-s2-beau-persons').value,
+        beauRotations: +document.getElementById('s-s2-beau-rotations').value,
         beauPrice: +document.getElementById('s-s2-beau-price').value,
         beauBean: +document.getElementById('s-s2-beau-bean').value,
         beauOther: +document.getElementById('s-s2-beau-other').value,
@@ -1302,16 +1307,16 @@ function getS2Params() {
     };
 }
 
-function calcS2Month(s, popCupsOvr, beauCupsOvr) {
+function calcS2Month(s, popCupsOvr, beauRotOvr) {
     const popCups = popCupsOvr || s.popCups;
-    const beauCups = beauCupsOvr || s.beauCups;
+    const beauRot = beauRotOvr || s.beauRotations;
     // POP
     const popRev = popCups * s.popPrice * s.days;
     const popCogs = popCups * (s.popBean + s.popOther) * s.days;
     const popGross = popRev - popCogs;
-    // BEAUTIFUL
-    const beauRev = beauCups * s.beauPrice * s.days;
-    const beauCogs = beauCups * (s.beauBean + s.beauOther) * s.days;
+    // BEAUTIFUL: revenue scales with persons, cost is per session
+    const beauRev = beauRot * s.beauPersons * s.beauPrice * s.days;
+    const beauCogs = beauRot * (s.beauBean + s.beauOther) * s.days;
     const beauGross = beauRev - beauCogs;
     // Combined cafe
     const cafeRev = popRev + beauRev;
@@ -1324,7 +1329,7 @@ function calcS2Month(s, popCupsOvr, beauCupsOvr) {
     const totalProfit = cafeProfit + goodsProfit;
 
     return { cafeRev, cafeCogs, fixedCosts, cafeProfit, goodsProfit, totalProfit,
-             popRev, popGross, beauRev, beauGross, popCups, beauCups };
+             popRev, popGross, beauRev, beauGross, popCups, beauRot };
 }
 
 function calcInvestment() {
@@ -1348,7 +1353,9 @@ function calcInvestment() {
     document.getElementById('v-s2-pop-bean').textContent = '\u00a5' + s.popBean.toLocaleString();
     document.getElementById('v-s2-pop-other').textContent = '\u00a5' + s.popOther.toLocaleString();
     // BEAUTIFUL model
-    document.getElementById('v-s2-beau-cups').textContent = s.beauCups;
+    document.getElementById('v-s2-beau-persons').textContent = s.beauPersons;
+    document.getElementById('v-s2-beau-rotations').textContent = s.beauRotations;
+    document.getElementById('r-s2-beau-daily-summary').textContent = s.beauPersons + '\u4eba \u00d7 ' + s.beauRotations + '\u56de = ' + (s.beauPersons * s.beauRotations) + '\u4eba';
     document.getElementById('v-s2-beau-price').textContent = '\u00a5' + s.beauPrice.toLocaleString();
     document.getElementById('v-s2-beau-bean').textContent = '\u00a5' + s.beauBean.toLocaleString();
     document.getElementById('v-s2-beau-other').textContent = '\u00a5' + s.beauOther.toLocaleString();
@@ -1438,7 +1445,7 @@ function calcInvestment() {
 
     for (let i = 0; i < 48; i++) {
         const popC = Math.min(Math.round(s.popCups * Math.pow(1 + s.growth, i)), s.cupsCap);
-        const beauC = Math.min(Math.round(s.beauCups * Math.pow(1 + s.growth, i)), Math.round(s.cupsCap * 0.3));
+        const beauC = Math.min(Math.round(s.beauRotations * Math.pow(1 + s.growth, i)), Math.round(s.cupsCap * 0.3));
         const r = calcS2Month(s, popC, beauC);
         const monthProfit = r.totalProfit;
         const recoveryAmount = Math.max(0, Math.round(monthProfit * s.recoveryRate));
@@ -1524,8 +1531,33 @@ function updateSplitDisplay(prefix, cafePct, goodsPct) {
     document.getElementById('bar-' + prefix + '-goods-gk').textContent = 'greekee ' + (100 - goodsPct) + '%';
 }
 
+// localStorage persistence
+const STORAGE_KEY = 'popx_business_structure_v2';
+
+function saveAllSliders() {
+    const data = {};
+    document.querySelectorAll('input[type="range"]').forEach(el => {
+        if (el.id) data[el.id] = el.value;
+    });
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch(e) {}
+}
+
+function loadAllSliders() {
+    try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return;
+        const data = JSON.parse(raw);
+        Object.entries(data).forEach(([id, val]) => {
+            const el = document.getElementById(id);
+            if (el) el.value = val;
+        });
+    } catch(e) {}
+}
+
 // Init
+loadAllSliders();
 simulate();
+forecast();
 </script>
 </body>
 </html>
