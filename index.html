@@ -24,8 +24,6 @@ body {
     font-feature-settings: "palt" 1;
     padding-top: 80px;
 }
-
-/* Header */
 header {
     background: #fff;
     color: var(--color-text);
@@ -41,155 +39,72 @@ header {
 header h1 { font-family: var(--font-heading); font-size: 22px; font-weight: 800; letter-spacing: 0.15em; color: var(--color-navy); }
 header p { font-size: 13px; opacity: 0.7; margin-top: 4px; }
 header .hub-link {
-    position: absolute;
-    left: 24px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 12px;
-    color: var(--color-navy);
-    text-decoration: none;
-    border: 1px solid rgba(36, 54, 104, 0.3);
-    padding: 6px 12px;
-    border-radius: 100vh;
-    transition: all 0.2s;
+    position: absolute; left: 24px; top: 50%; transform: translateY(-50%);
+    font-size: 12px; color: var(--color-navy); text-decoration: none;
+    border: 1px solid rgba(36,54,104,0.3); padding: 6px 12px; border-radius: 100vh; transition: all 0.2s;
 }
-header .hub-link:hover {
-    background: rgba(36, 54, 104, 0.05);
-    border-color: var(--color-navy);
-}
-
-/* Container */
+header .hub-link:hover { background: rgba(36,54,104,0.05); border-color: var(--color-navy); }
 .container { max-width: 1200px; margin: 0 auto; padding: 24px 16px; }
-
-/* Section titles */
 .section-title {
-    font-family: var(--font-heading);
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--color-navy);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid var(--color-cyan);
+    font-family: var(--font-heading); font-size: 13px; font-weight: 700; color: var(--color-navy);
+    letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 20px;
+    padding-bottom: 10px; border-bottom: 2px solid var(--color-cyan);
 }
-
-/* Tabs */
-.tab-bar {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 28px;
-    flex-wrap: wrap;
-}
+.tab-bar { display: flex; gap: 8px; margin-bottom: 28px; flex-wrap: wrap; }
 .tab-btn {
-    font-family: var(--font-heading);
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    padding: 8px 20px;
-    border-radius: 100vh;
-    border: 1px solid rgba(36, 54, 104, 0.2);
-    background: white;
-    color: var(--color-navy);
-    cursor: pointer;
-    transition: all 0.2s;
+    font-family: var(--font-heading); font-size: 12px; font-weight: 600; letter-spacing: 0.05em;
+    padding: 8px 20px; border-radius: 100vh; border: 1px solid rgba(36,54,104,0.2);
+    background: white; color: var(--color-navy); cursor: pointer; transition: all 0.2s;
 }
-.tab-btn:hover { border-color: var(--color-navy); background: rgba(36, 54, 104, 0.03); }
-.tab-btn.active {
-    background: var(--color-navy);
-    color: white;
-    border-color: var(--color-navy);
-}
-
-/* Cards */
+.tab-btn:hover { border-color: var(--color-navy); background: rgba(36,54,104,0.03); }
+.tab-btn.active { background: var(--color-navy); color: white; border-color: var(--color-navy); }
 .card {
-    background: white;
-    border-radius: 16px;
-    padding: 24px;
-    border: 1px solid rgba(0,0,0,0.08);
-    margin-bottom: 20px;
+    background: white; border-radius: 16px; padding: 24px;
+    border: 1px solid rgba(0,0,0,0.08); margin-bottom: 20px;
 }
 .card h3 {
-    font-family: var(--font-heading);
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--color-navy);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-bottom: 16px;
+    font-family: var(--font-heading); font-size: 13px; font-weight: 700;
+    color: var(--color-navy); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px;
 }
 .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; margin-bottom: 20px; }
-
-/* Structure table */
 .struct-table { width: 100%; border-collapse: collapse; font-size: 14px; }
 .struct-table th {
-    background: #f8f9fc;
-    padding: 10px 14px;
-    text-align: left;
-    font-family: var(--font-heading);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    color: var(--color-navy);
-    border-bottom: 2px solid rgba(36,54,104,0.1);
+    background: #f8f9fc; padding: 10px 14px; text-align: left;
+    font-family: var(--font-heading); font-size: 11px; font-weight: 700;
+    letter-spacing: 0.06em; color: var(--color-navy); border-bottom: 2px solid rgba(36,54,104,0.1);
 }
-.struct-table td {
-    padding: 10px 14px;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-    line-height: 1.6;
-}
+.struct-table td { padding: 10px 14px; border-bottom: 1px solid rgba(0,0,0,0.05); line-height: 1.6; }
 .struct-table tr:last-child td { border-bottom: none; }
-
-/* Badge */
 .badge {
-    display: inline-block;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    padding: 3px 10px;
-    border-radius: 100vh;
-    font-family: var(--font-heading);
+    display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.05em;
+    padding: 3px 10px; border-radius: 100vh; font-family: var(--font-heading);
 }
 .badge-popx { background: var(--color-navy); color: white; }
 .badge-greekee { background: var(--color-pink); color: white; }
 .badge-shared { background: var(--color-cyan); color: var(--color-navy); }
-
-/* Revenue split bars */
+.badge-s2-pool {
+    background: linear-gradient(135deg, #f59e0b, #d97706); color: white;
+    font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 100vh;
+    font-family: var(--font-heading); display: inline-block; letter-spacing: 0.05em;
+}
+.badge-s2-ready {
+    display: inline-block; background: #059669; color: white;
+    font-size: 10px; font-weight: 700; padding: 4px 12px; border-radius: 100vh; font-family: var(--font-heading);
+}
 .split-bar-container { margin: 8px 0; }
 .split-bar {
-    display: flex;
-    height: 32px;
-    border-radius: 8px;
-    overflow: hidden;
-    font-size: 11px;
-    font-weight: 700;
-    font-family: var(--font-heading);
+    display: flex; height: 32px; border-radius: 8px; overflow: hidden;
+    font-size: 11px; font-weight: 700; font-family: var(--font-heading);
 }
 .split-popx {
-    background: var(--color-navy);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: width 0.4s ease;
+    background: var(--color-navy); color: white;
+    display: flex; align-items: center; justify-content: center; transition: width 0.4s ease;
 }
 .split-greekee {
-    background: var(--color-pink);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: width 0.4s ease;
+    background: var(--color-pink); color: white;
+    display: flex; align-items: center; justify-content: center; transition: width 0.4s ease;
 }
-.split-label {
-    display: flex;
-    justify-content: space-between;
-    font-size: 11px;
-    color: #999;
-    margin-top: 4px;
-}
-
-/* Cost rows */
+.split-label { display: flex; justify-content: space-between; font-size: 11px; color: #999; margin-top: 4px; }
 .cost-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; }
 .cost-row:last-child { border-bottom: none; }
 .cost-label { color: #666; }
@@ -198,8 +113,6 @@ header .hub-link:hover {
 .cost-value.green { color: #059669; }
 .cost-total { background: #f8f9fc; margin: 12px -24px -24px; padding: 16px 24px; border-radius: 0 0 16px 16px; }
 .cost-total .cost-row { border: none; font-size: 16px; }
-
-/* Controls */
 .control-group { margin-bottom: 16px; }
 .control-label { font-size: 12px; font-weight: 600; color: #666; margin-bottom: 6px; display: flex; justify-content: space-between; }
 .control-val { color: var(--color-navy); font-size: 14px; font-weight: 700; }
@@ -212,12 +125,9 @@ input[type="range"]::-webkit-slider-thumb {
     background: var(--color-navy); cursor: pointer; border: 3px solid white;
     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
-
-/* Result banner */
 .result-banner {
     background: linear-gradient(135deg, var(--color-navy), #1a284d);
-    color: white; border-radius: 16px; padding: 32px;
-    text-align: center; margin: 24px 0;
+    color: white; border-radius: 16px; padding: 32px; text-align: center; margin: 24px 0;
 }
 .result-banner h2 { font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.1em; opacity: 0.8; margin-bottom: 8px; }
 .result-big { font-family: var(--font-heading); font-size: 40px; font-weight: 800; }
@@ -228,85 +138,26 @@ input[type="range"]::-webkit-slider-thumb {
 .result-item { text-align: center; }
 .result-item .ri-val { font-family: var(--font-heading); font-size: 22px; font-weight: 700; }
 .result-item .ri-label { font-size: 11px; opacity: 0.6; margin-top: 2px; }
-
-/* Pattern cards */
 .pattern-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 20px; margin: 20px 0; }
-.pattern-card {
-    background: white;
-    border-radius: 16px;
-    padding: 24px;
-    border: 2px solid rgba(0,0,0,0.06);
-    transition: all 0.3s;
-    cursor: pointer;
-}
-.pattern-card:hover { border-color: var(--color-cyan); }
-.pattern-card.active { border-color: var(--color-navy); box-shadow: 0 4px 20px rgba(36,54,104,0.12); }
-.pattern-label {
-    font-family: var(--font-heading);
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: white;
-    background: var(--color-navy);
-    display: inline-block;
-    padding: 3px 12px;
-    border-radius: 100vh;
-    margin-bottom: 12px;
-}
-.pattern-title {
-    font-family: var(--font-heading);
-    font-size: 18px;
-    font-weight: 800;
-    color: var(--color-navy);
-    margin-bottom: 8px;
-}
-.pattern-desc {
-    font-size: 13px;
-    line-height: 1.7;
-    color: #666;
-    margin-bottom: 16px;
-}
-
-/* Flow diagram */
 .flow-container {
-    background: white;
-    border-radius: 16px;
-    padding: 28px;
-    border: 1px solid rgba(0,0,0,0.08);
-    margin-bottom: 20px;
-    overflow-x: auto;
+    background: white; border-radius: 16px; padding: 28px;
+    border: 1px solid rgba(0,0,0,0.08); margin-bottom: 20px; overflow-x: auto;
 }
 .flow-diagram {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    min-width: 600px;
-    padding: 20px 0;
-    flex-wrap: nowrap;
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    min-width: 600px; padding: 20px 0; flex-wrap: nowrap;
 }
 .flow-box {
-    padding: 14px 18px;
-    border-radius: 12px;
-    font-size: 12px;
-    font-weight: 600;
-    text-align: center;
-    min-width: 120px;
-    line-height: 1.5;
+    padding: 14px 18px; border-radius: 12px; font-size: 12px;
+    font-weight: 600; text-align: center; min-width: 120px; line-height: 1.5;
 }
 .flow-revenue { background: #e8f5e9; border: 1px solid #a5d6a7; color: #2e7d32; }
 .flow-topoff { background: #fff3e0; border: 1px solid #ffcc80; color: #e65100; }
 .flow-profit { background: #e3f2fd; border: 1px solid #90caf9; color: #1565c0; }
+.flow-pool { background: linear-gradient(135deg, #fef3c7, #fde68a); border: 1px solid #f59e0b; color: #92400e; }
 .flow-popx { background: var(--color-navy); color: white; }
 .flow-greekee { background: var(--color-pink); color: white; }
-.flow-arrow {
-    font-size: 20px;
-    color: #ccc;
-    flex-shrink: 0;
-}
-
-/* Scenario comparison */
+.flow-arrow { font-size: 20px; color: #ccc; flex-shrink: 0; }
 .scenario-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0; }
 @media (max-width: 768px) {
     .scenario-grid { grid-template-columns: 1fr; }
@@ -314,179 +165,110 @@ input[type="range"]::-webkit-slider-thumb {
     .result-grid { grid-template-columns: 1fr 1fr; }
     .pattern-grid { grid-template-columns: 1fr; }
 }
-
-/* Tab panels */
 .tab-panel { display: none; }
 .tab-panel.active { display: block; }
-
-/* Summary stat */
-.stat-row {
-    display: flex;
-    gap: 16px;
-    margin: 16px 0;
-    flex-wrap: wrap;
-}
+.stat-row { display: flex; gap: 16px; margin: 16px 0; flex-wrap: wrap; }
 .stat-box {
-    flex: 1;
-    min-width: 140px;
-    background: #f8f9fc;
-    border-radius: 12px;
-    padding: 16px;
-    text-align: center;
+    flex: 1; min-width: 140px; background: #f8f9fc; border-radius: 12px; padding: 16px; text-align: center;
 }
-.stat-box .stat-num {
-    font-family: var(--font-heading);
-    font-size: 24px;
-    font-weight: 800;
-    color: var(--color-navy);
-}
-.stat-box .stat-label {
-    font-size: 11px;
-    color: #999;
-    margin-top: 4px;
-}
-
-/* 12-month table */
+.stat-box .stat-num { font-family: var(--font-heading); font-size: 24px; font-weight: 800; color: var(--color-navy); }
+.stat-box .stat-label { font-size: 11px; color: #999; margin-top: 4px; }
 .monthly-table { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 16px; }
 .monthly-table th {
-    background: var(--color-navy);
-    color: white;
-    padding: 8px 6px;
-    text-align: right;
-    font-family: var(--font-heading);
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.05em;
+    background: var(--color-navy); color: white; padding: 8px 6px; text-align: right;
+    font-family: var(--font-heading); font-size: 10px; font-weight: 600; letter-spacing: 0.05em;
 }
 .monthly-table th:first-child { text-align: left; border-radius: 8px 0 0 0; }
 .monthly-table th:last-child { border-radius: 0 8px 0 0; }
 .monthly-table td {
-    padding: 7px 6px;
-    text-align: right;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    padding: 7px 6px; text-align: right; border-bottom: 1px solid rgba(0,0,0,0.05);
     font-variant-numeric: tabular-nums;
 }
 .monthly-table td:first-child { text-align: left; font-weight: 600; color: var(--color-navy); }
 .monthly-table tr:last-child td { font-weight: 700; background: #f8f9fc; }
 .monthly-table .positive { color: #059669; }
 .monthly-table .negative { color: #e74c3c; }
-
-/* Note box */
 .note-box {
-    background: #fffbf0;
-    border: 1px solid #ffe0a0;
-    border-radius: 12px;
-    padding: 16px 20px;
-    font-size: 13px;
-    line-height: 1.7;
-    margin: 16px 0;
-    color: #8a6d3b;
+    background: #fffbf0; border: 1px solid #ffe0a0; border-radius: 12px;
+    padding: 16px 20px; font-size: 13px; line-height: 1.7; margin: 16px 0; color: #8a6d3b;
 }
-
-/* S2 Ready Badge */
-.badge-s2-ready {
-    display: inline-block;
-    background: #059669;
-    color: white;
-    font-size: 10px;
-    font-weight: 700;
-    padding: 4px 12px;
-    border-radius: 100vh;
-    font-family: var(--font-heading);
-}
-
-/* Phase Timeline */
-.phase-timeline {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin: 24px 0;
-    flex-wrap: wrap;
-}
+.phase-timeline { display: flex; align-items: center; gap: 16px; margin: 24px 0; flex-wrap: wrap; }
 .phase-box {
-    flex: 1;
-    min-width: 180px;
-    background: white;
-    border-radius: 12px;
-    padding: 20px;
-    border: 2px solid rgba(0,0,0,0.08);
-    text-align: center;
+    flex: 1; min-width: 180px; background: white; border-radius: 12px;
+    padding: 20px; border: 2px solid rgba(0,0,0,0.08); text-align: center;
 }
 .phase-box.s1 { border-color: var(--color-navy); }
 .phase-box.s2 { border-color: var(--color-cyan); }
 .phase-box.s3 { border-color: var(--color-pink); }
-.phase-box h4 {
-    font-family: var(--font-heading);
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--color-navy);
-    margin-bottom: 8px;
-}
-.phase-box p {
-    font-size: 12px;
-    color: #666;
-    line-height: 1.5;
-}
-.phase-arrow {
-    font-size: 24px;
-    color: #ccc;
-    flex-shrink: 0;
-}
-
-/* Formula display */
+.phase-box h4 { font-family: var(--font-heading); font-size: 12px; font-weight: 700; color: var(--color-navy); margin-bottom: 8px; }
+.phase-box p { font-size: 12px; color: #666; line-height: 1.5; }
+.phase-arrow { font-size: 24px; color: #ccc; flex-shrink: 0; }
 .formula-box {
-    background: #f8f9fc;
-    border-radius: 8px;
-    padding: 12px 16px;
-    font-size: 12px;
-    font-family: 'Courier New', monospace;
-    color: var(--color-navy);
-    margin: 8px 0;
-    line-height: 1.6;
+    background: #f8f9fc; border-radius: 8px; padding: 12px 16px;
+    font-size: 12px; font-family: 'Courier New', monospace;
+    color: var(--color-navy); margin: 8px 0; line-height: 1.6;
 }
-
-/* Split card with formula */
-.split-card {
-    background: #f8f9fc;
-    border-radius: 12px;
-    padding: 16px;
-    margin: 12px 0;
+.split-card { background: #f8f9fc; border-radius: 12px; padding: 16px; margin: 12px 0; }
+.split-card-label { font-size: 12px; font-weight: 600; color: var(--color-navy); margin-bottom: 8px; }
+.split-card-formula { font-size: 12px; font-family: 'Courier New', monospace; color: #666; margin-bottom: 8px; }
+.split-card-result { font-size: 14px; font-weight: 700; color: var(--color-navy); }
+/* Pooled state */
+.pooled-overlay {
+    position: relative;
 }
-.split-card-label {
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--color-navy);
-    margin-bottom: 8px;
+.pooled-overlay::after {
+    content: 'S2 プール中';
+    position: absolute; top: 8px; right: 8px;
+    background: linear-gradient(135deg, #f59e0b, #d97706); color: white;
+    font-size: 9px; font-weight: 700; padding: 2px 8px; border-radius: 100vh;
+    font-family: var(--font-heading); letter-spacing: 0.05em;
 }
-.split-card-formula {
-    font-size: 12px;
-    font-family: 'Courier New', monospace;
-    color: #666;
-    margin-bottom: 8px;
+.pooled-amount { color: #999 !important; text-decoration: line-through; font-size: 13px !important; }
+.actual-amount { color: var(--color-navy); font-size: 16px; font-weight: 800; }
+/* Investment cards */
+.invest-card {
+    background: white; border-radius: 16px; padding: 24px;
+    border: 2px solid rgba(0,0,0,0.08); margin-bottom: 20px;
 }
-.split-card-result {
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--color-navy);
+.invest-card.popx-card { border-color: var(--color-navy); }
+.invest-card.gk-card { border-color: var(--color-pink); }
+.invest-card.pool-card { border-color: var(--color-cyan); }
+.invest-summary {
+    background: linear-gradient(135deg, #059669, #047857);
+    color: white; border-radius: 16px; padding: 28px; text-align: center; margin: 20px 0;
+}
+.invest-summary h3 { font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.1em; opacity: 0.8; margin-bottom: 12px; }
+.invest-summary .big-num { font-family: var(--font-heading); font-size: 36px; font-weight: 800; }
+.invest-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 20px; }
+.invest-grid-item { text-align: center; }
+.invest-grid-item .ig-val { font-family: var(--font-heading); font-size: 20px; font-weight: 700; }
+.invest-grid-item .ig-label { font-size: 11px; opacity: 0.7; margin-top: 2px; }
+.recovery-bar-bg {
+    background: #e5e7eb; border-radius: 8px; height: 24px; overflow: hidden; margin: 8px 0;
+}
+.recovery-bar-fill {
+    background: linear-gradient(90deg, var(--color-cyan), #059669);
+    height: 100%; border-radius: 8px; transition: width 0.4s ease;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px; font-weight: 700; color: white; font-family: var(--font-heading);
 }
 </style>
 </head>
 <body>
 
 <header>
-    <a href="https://taisei-popx.github.io/popx-beans-manager/08_POPX_Coffee_Hub.html" class="hub-link">← Hub</a>
+    <a href="https://taisei-popx.github.io/popx-beans-manager/08_POPX_Coffee_Hub.html" class="hub-link">&larr; Hub</a>
     <h1>BUSINESS STRUCTURE</h1>
-    <p>popx coffee lab × greekee — Partnership Model</p>
+    <p>popx coffee lab &times; greekee &mdash; Partnership Model</p>
 </header>
 
 <div class="container">
 
-    <!-- TAB BAR -->
     <div class="tab-bar">
         <button class="tab-btn active" onclick="showTab('structure')">Business Structure</button>
-        <button class="tab-btn" onclick="showTab('simulation')">間借り Revenue Sim</button>
+        <button class="tab-btn" onclick="showTab('simulation')">S1 Revenue Sim</button>
         <button class="tab-btn" onclick="showTab('yearly')">12-Month Forecast</button>
-        <button class="tab-btn" onclick="showTab('recovery')">Investment Recovery</button>
+        <button class="tab-btn" onclick="showTab('recovery')">S2 Investment &amp; Recovery</button>
     </div>
 
     <!-- ==================== TAB 1: BUSINESS STRUCTURE ==================== -->
@@ -515,80 +297,53 @@ input[type="range"]::-webkit-slider-thumb {
             </div>
         </div>
 
-        <!-- Revenue Flow -->
-        <div class="section-title">Revenue Flow</div>
+        <!-- Revenue Flow - Updated for S1 Pool -->
+        <div class="section-title">S1 Revenue Flow（間借りフェーズ）</div>
 
         <div class="flow-container">
-            <h3 style="font-family:var(--font-heading);font-size:13px;font-weight:700;color:var(--color-navy);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:16px;">Revenue → Top-off → Profit Split</h3>
+            <h3 style="font-family:var(--font-heading);font-size:13px;font-weight:700;color:var(--color-navy);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:16px;">Revenue &rarr; Top-off &rarr; Profit &rarr; S2 Pool</h3>
             <div class="flow-diagram">
                 <div class="flow-box flow-revenue">売上<br><small>カフェ / グッズ</small></div>
-                <div class="flow-arrow">→</div>
+                <div class="flow-arrow">&rarr;</div>
                 <div class="flow-box flow-topoff">トップオフ<br><small>共通事業コスト</small></div>
-                <div class="flow-arrow">→</div>
+                <div class="flow-arrow">&rarr;</div>
                 <div class="flow-box flow-profit">事業利益<br><small>Gross Profit</small></div>
-                <div class="flow-arrow">→</div>
+                <div class="flow-arrow">&rarr;</div>
+                <div class="flow-box flow-pool">S2プール<br><small>全額プール</small></div>
+                <div class="flow-arrow">&rarr;</div>
                 <div style="display:flex;flex-direction:column;gap:8px;">
-                    <div class="flow-box flow-popx">POPX<br><small>80% / 70%</small></div>
-                    <div class="flow-box flow-greekee">greekee<br><small>20% / 30%</small></div>
+                    <div class="flow-box flow-popx" style="font-size:11px;">POPX<br><small>¥50,000/月<br>（豆・機材費回収）</small></div>
+                    <div class="flow-box flow-greekee" style="font-size:11px;">greekee<br><small>固定収入のみ<br>（家賃・バリスタ）</small></div>
                 </div>
             </div>
+        </div>
+
+        <div class="note-box">
+            <strong>S1フェーズ方針：</strong>事業利益は全額S2投資プールへ。POPXは豆原価・機材費として月¥50,000のみ回収。greekeeは家賃・バリスタ業務委託費をトップオフで受領。レベニューシェアによる分配はS2以降に開始。
         </div>
 
         <!-- Top-off items -->
         <div class="card">
             <h3>トップオフ項目（売上から控除）</h3>
             <table class="struct-table">
-                <thead>
-                    <tr>
-                        <th>項目</th>
-                        <th>内容</th>
-                        <th>負担者</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
+                <thead><tr><th>項目</th><th>内容</th><th>負担者</th><th>Status</th></tr></thead>
                 <tbody>
-                    <tr>
-                        <td>コーヒー豆仕入れ</td>
-                        <td>COGS — 仕入れ伝票ベース</td>
-                        <td>POPX立替</td>
-                        <td><span class="badge badge-shared">TOP-OFF</span></td>
-                    </tr>
-                    <tr>
-                        <td>グッズ製造費</td>
-                        <td>COGS — 製造発注書ベース</td>
-                        <td>パターンによる</td>
-                        <td><span class="badge badge-shared">TOP-OFF</span></td>
-                    </tr>
-                    <tr>
-                        <td>家賃</td>
-                        <td>greekeeへの月額固定支払い</td>
-                        <td>売上から控除</td>
-                        <td><span class="badge badge-shared">TOP-OFF</span></td>
-                    </tr>
-                    <tr>
-                        <td>バリスタ業務委託費</td>
-                        <td>greekee雇用 → POPXへ月額請求</td>
-                        <td>greekee雇用</td>
-                        <td><span class="badge badge-shared">TOP-OFF</span></td>
-                    </tr>
-                    <tr>
-                        <td>消耗品・手数料</td>
-                        <td>フィルター、カップ、EC手数料等</td>
-                        <td>伝票ベース</td>
-                        <td><span class="badge badge-shared">TOP-OFF</span></td>
-                    </tr>
-                    <tr>
-                        <td style="color:#999;">機材（設備投資）</td>
-                        <td style="color:#999;">エスプレッソマシン、グラインダー等</td>
-                        <td style="color:#999;">POPX投資</td>
-                        <td><span class="badge badge-popx">POPX負担</span></td>
-                    </tr>
+                    <tr><td>コーヒー豆仕入れ</td><td>COGS — 仕入れ伝票ベース</td><td>POPX立替</td><td><span class="badge badge-shared">TOP-OFF</span></td></tr>
+                    <tr><td>グッズ製造費</td><td>COGS — 製造発注書ベース</td><td>パターンによる</td><td><span class="badge badge-shared">TOP-OFF</span></td></tr>
+                    <tr><td>家賃</td><td>greekeeへの月額固定支払い</td><td>売上から控除</td><td><span class="badge badge-shared">TOP-OFF</span></td></tr>
+                    <tr><td>バリスタ業務委託費</td><td>greekee雇用 → POPXへ月額請求</td><td>greekee雇用</td><td><span class="badge badge-shared">TOP-OFF</span></td></tr>
+                    <tr><td>消耗品・手数料</td><td>フィルター、カップ、EC手数料等</td><td>伝票ベース</td><td><span class="badge badge-shared">TOP-OFF</span></td></tr>
+                    <tr><td style="color:#999;">機材（設備投資）</td><td style="color:#999;">エスプレッソマシン、グラインダー等</td><td style="color:#999;">POPX投資</td><td><span class="badge badge-popx">POPX負担</span></td></tr>
                 </tbody>
             </table>
         </div>
 
         <!-- Revenue Split -->
-        <div class="section-title">Revenue Split</div>
+        <div class="section-title">Revenue Split（S2以降適用）</div>
+
+        <div class="note-box" style="margin-bottom: 20px; background: #fef3c7; border-color: #f59e0b;">
+            <strong>S1フェーズでは分配なし：</strong>下記の分配比率はS2フェーズ（1店舗目開業後）から適用。S1では全額プールとなるため、この比率は「本来の分配額」として参考表示のみ。
+        </div>
 
         <div class="card">
             <h3>カフェ事業利益</h3>
@@ -597,10 +352,7 @@ input[type="range"]::-webkit-slider-thumb {
                     <div class="split-popx" style="width:80%">POPX 80%</div>
                     <div class="split-greekee" style="width:20%">greekee 20%</div>
                 </div>
-                <div class="split-label">
-                    <span>事業運営・投資・クリエイティブ</span>
-                    <span>場所提供・世界観</span>
-                </div>
+                <div class="split-label"><span>事業運営・投資・クリエイティブ</span><span>場所提供・世界観</span></div>
             </div>
         </div>
 
@@ -613,10 +365,7 @@ input[type="range"]::-webkit-slider-thumb {
                         <div class="split-popx" style="width:20%">20%</div>
                         <div class="split-greekee" style="width:80%">greekee 80%</div>
                     </div>
-                    <div class="split-label">
-                        <span>クリエイティブ費</span>
-                        <span>IP + 製造 + 販売オペレーション</span>
-                    </div>
+                    <div class="split-label"><span>クリエイティブ費</span><span>IP + 製造 + 販売オペレーション</span></div>
                 </div>
             </div>
             <div class="card" style="margin-bottom:0;">
@@ -627,10 +376,7 @@ input[type="range"]::-webkit-slider-thumb {
                         <div class="split-popx" style="width:70%">POPX 70%</div>
                         <div class="split-greekee" style="width:30%">30%</div>
                     </div>
-                    <div class="split-label">
-                        <span>企画 + 制作 + 在庫 + 販売</span>
-                        <span>IPライセンス</span>
-                    </div>
+                    <div class="split-label"><span>企画 + 制作 + 在庫 + 販売</span><span>IPライセンス</span></div>
                 </div>
             </div>
         </div>
@@ -641,16 +387,15 @@ input[type="range"]::-webkit-slider-thumb {
 
     </div>
 
-    <!-- ==================== TAB 2: SIMULATION ==================== -->
+    <!-- ==================== TAB 2: S1 SIMULATION ==================== -->
     <div class="tab-panel" id="tab-simulation">
 
-        <div class="section-title">間借りモデル — Revenue Simulation</div>
+        <div class="section-title">S1 間借りモデル — Revenue Simulation</div>
 
         <div class="note-box">
-            greekee中目黒店舗内でのポップアップ型カフェ運営を想定。スライダーを動かして、各パラメータの影響をシミュレーション。
+            <strong>S1フェーズ：</strong>greekee中目黒店舗内でのポップアップ型カフェ運営。事業利益は<strong>全額S2プール</strong>。POPXは豆・機材費として月¥50,000のみ回収。
         </div>
 
-        <!-- Cafe Parameters -->
         <div class="card-grid">
             <div class="card">
                 <h3>☕ カフェ — パラメータ</h3>
@@ -694,6 +439,10 @@ input[type="range"]::-webkit-slider-thumb {
                     <div class="control-label"><span>送料・関税 / 月</span><span class="control-val" id="v-shipping">¥20,000</span></div>
                     <input type="range" id="s-shipping" min="5000" max="50000" step="5000" value="20000" oninput="simulate()">
                 </div>
+                <div class="control-group">
+                    <div class="control-label"><span>POPX コスト回収 / 月</span><span class="control-val" id="v-popx-recovery">¥50,000</span></div>
+                    <input type="range" id="s-popx-recovery" min="30000" max="100000" step="5000" value="50000" oninput="simulate()">
+                </div>
             </div>
         </div>
 
@@ -726,11 +475,11 @@ input[type="range"]::-webkit-slider-thumb {
             </div>
         </div>
 
-        <!-- RESULTS -->
+        <!-- RESULTS BANNER -->
         <div class="result-banner" id="result-banner">
             <h2>MONTHLY BUSINESS PROFIT</h2>
             <div class="result-big positive" id="r-total">¥0</div>
-            <div class="result-sub" id="r-total-sub">カフェ + グッズ 合計事業利益</div>
+            <div class="result-sub">カフェ + グッズ 合計事業利益 → <strong>全額S2プール</strong></div>
             <div class="result-grid">
                 <div class="result-item">
                     <div class="ri-val" id="r-cafe-profit" style="color:var(--color-cyan)">¥0</div>
@@ -743,48 +492,64 @@ input[type="range"]::-webkit-slider-thumb {
             </div>
         </div>
 
-        <!-- Split Results with Formulas -->
+        <!-- S1 Split: Pool + Actual Income -->
         <div class="scenario-grid">
-            <div class="card">
-                <h3 style="color:var(--color-navy);">POPX — 月間収益</h3>
-                <div class="split-card">
-                    <div class="split-card-label">カフェ事業分配</div>
+            <div class="card" style="position:relative;">
+                <h3 style="color:var(--color-navy);">POPX — S1 月間収益</h3>
+                <div class="split-card" style="background:#fef3c7; position:relative;">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                        <div class="split-card-label">本来の分配額（参考）</div>
+                        <span class="badge-s2-pool">S2 プール中</span>
+                    </div>
                     <div class="split-card-formula" id="f-popx-cafe-formula">式</div>
-                    <div class="split-card-result" id="r-popx-cafe">¥0</div>
-                </div>
-                <div class="split-card">
-                    <div class="split-card-label">グッズ事業分配</div>
+                    <div class="pooled-amount" id="r-popx-cafe-pooled">¥0</div>
+                    <div style="height:8px;"></div>
                     <div class="split-card-formula" id="f-popx-goods-formula">式</div>
-                    <div class="split-card-result" id="r-popx-goods">¥0</div>
+                    <div class="pooled-amount" id="r-popx-goods-pooled">¥0</div>
+                    <div style="height:4px;"></div>
+                    <div class="pooled-amount" id="r-popx-total-pooled">合計: ¥0</div>
                 </div>
-                <div class="cost-total">
-                    <div class="cost-row"><span class="cost-label">POPX 月間合計</span><span class="cost-value green" id="r-popx-total" style="font-size:20px;">¥0</span></div>
+                <div class="split-card" style="background:#e8f5e9; border: 2px solid #059669;">
+                    <div class="split-card-label" style="color:#059669;">実際の受取額（S1フェーズ）</div>
+                    <div class="split-card-formula">豆原価 + 機材費 回収（月額固定）</div>
+                    <div class="actual-amount" id="r-popx-actual">¥50,000</div>
                 </div>
             </div>
-            <div class="card">
-                <h3 style="color:var(--color-pink);">greekee — 月間収益</h3>
-                <div class="split-card">
-                    <div class="split-card-label">カフェ事業分配</div>
+            <div class="card" style="position:relative;">
+                <h3 style="color:var(--color-pink);">greekee — S1 月間収益</h3>
+                <div class="split-card" style="background:#fef3c7; position:relative;">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                        <div class="split-card-label">本来の分配額（参考）</div>
+                        <span class="badge-s2-pool">S2 プール中</span>
+                    </div>
                     <div class="split-card-formula" id="f-gk-cafe-formula">式</div>
-                    <div class="split-card-result" id="r-gk-cafe">¥0</div>
-                </div>
-                <div class="split-card">
-                    <div class="split-card-label">グッズ事業分配</div>
+                    <div class="pooled-amount" id="r-gk-cafe-pooled">¥0</div>
+                    <div style="height:8px;"></div>
                     <div class="split-card-formula" id="f-gk-goods-formula">式</div>
-                    <div class="split-card-result" id="r-gk-goods">¥0</div>
+                    <div class="pooled-amount" id="r-gk-goods-pooled">¥0</div>
+                    <div style="height:4px;"></div>
+                    <div class="pooled-amount" id="r-gk-total-pooled">合計: ¥0</div>
                 </div>
-                <div style="border-top: 1px solid rgba(0,0,0,0.08); padding-top: 12px; margin-top: 12px;">
-                    <div style="font-size: 12px; font-weight: 600; color: var(--color-navy); margin-bottom: 8px;">固定収入（トップオフ経由）</div>
-                    <div class="cost-row" style="margin-bottom: 8px;"><span class="cost-label">家賃収入</span><span class="cost-value" id="r-gk-rent">¥0</span></div>
-                    <div class="cost-row"><span class="cost-label">バリスタ業務委託収入</span><span class="cost-value" id="r-gk-barista">¥0</span></div>
-                </div>
-                <div class="cost-total">
-                    <div class="cost-row"><span class="cost-label">greekee 月間合計</span><span class="cost-value green" id="r-gk-total" style="font-size:20px;">¥0</span></div>
+                <div class="split-card" style="background:#e8f5e9; border: 2px solid #059669;">
+                    <div class="split-card-label" style="color:#059669;">実際の受取額（S1フェーズ）</div>
+                    <div style="font-size:12px; color:#666; margin-bottom:4px;">固定収入（トップオフ経由）</div>
+                    <div class="cost-row" style="padding:4px 0;"><span class="cost-label">家賃収入</span><span class="cost-value" id="r-gk-rent">¥0</span></div>
+                    <div class="cost-row" style="padding:4px 0;"><span class="cost-label">バリスタ業務委託収入</span><span class="cost-value" id="r-gk-barista">¥0</span></div>
+                    <div style="border-top:1px solid #059669;padding-top:8px;margin-top:8px;">
+                        <div class="actual-amount" id="r-gk-actual">¥200,000</div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- P&L Waterfall with S2 Pool -->
+        <!-- S2 Pool Banner -->
+        <div style="background:linear-gradient(135deg,#f59e0b,#d97706);color:white;border-radius:16px;padding:28px;text-align:center;margin:20px 0;">
+            <h3 style="font-family:var(--font-heading);font-size:12px;letter-spacing:0.1em;opacity:0.9;margin-bottom:8px;">S2 INVESTMENT POOL（月額プール額）</h3>
+            <div style="font-family:var(--font-heading);font-size:36px;font-weight:800;" id="r-s2-pool-amount">¥0</div>
+            <div style="font-size:13px;opacity:0.8;margin-top:8px;" id="r-s2-pool-formula">事業利益 ¥0 − POPX回収 ¥50,000 = ¥0</div>
+        </div>
+
+        <!-- P&L Waterfall -->
         <div class="card">
             <h3>P&L Waterfall（月次）</h3>
             <div class="cost-row"><span class="cost-label">カフェ売上</span><span class="cost-value" id="w-cafe-rev">¥0</span></div>
@@ -801,15 +566,10 @@ input[type="range"]::-webkit-slider-thumb {
             <div class="cost-total">
                 <div class="cost-row"><span class="cost-label">合計事業利益</span><span class="cost-value" id="w-total" style="font-size:20px;">¥0</span></div>
             </div>
-            <div style="height:16px;"></div>
-            <div style="margin-top: 20px; padding-top: 12px; border-top: 2px solid rgba(0,0,0,0.08);">
-                <div class="control-group">
-                    <div class="control-label"><span>S2 Fund Pool Rate（S1フェーズ）</span><span class="control-val" id="v-s2-pool-pct">100%</span></div>
-                    <input type="range" id="s-s2-pool-pct" min="0" max="100" value="100" oninput="simulate()">
-                </div>
-                <div class="formula-box" id="w-s2-waterfall">
-                    合計事業利益 ¥0 → S2プール（100%）= ¥0 → 分配可能利益 = ¥0
-                </div>
+            <div style="height:12px;"></div>
+            <div style="padding: 16px; background: linear-gradient(135deg, #fef3c7, #fde68a); border-radius: 12px; margin-top: 12px;">
+                <div class="cost-row" style="border:none;"><span class="cost-label" style="font-weight:700;color:#92400e;">└ POPX コスト回収</span><span class="cost-value" style="color:#92400e;" id="w-popx-recovery">-¥50,000</span></div>
+                <div class="cost-row" style="border:none;font-size:18px;"><span class="cost-label" style="font-weight:800;color:#92400e;">= S2プール額</span><span class="cost-value" style="color:#92400e;font-size:20px;" id="w-s2-pool">¥0</span></div>
             </div>
         </div>
 
@@ -818,10 +578,10 @@ input[type="range"]::-webkit-slider-thumb {
     <!-- ==================== TAB 3: 12-MONTH FORECAST ==================== -->
     <div class="tab-panel" id="tab-yearly">
 
-        <div class="section-title">12-Month Forecast with S2 Fund Accumulation</div>
+        <div class="section-title">S1 12-Month Forecast — S2 Fund Accumulation</div>
 
         <div class="note-box">
-            シミュレーションタブのパラメータを元に、12ヶ月の成長予測を自動生成。S2 Fund Pool の累積を追跡して、投資準備状況を可視化します。
+            S1フェーズ12ヶ月の成長予測。事業利益は全額プール（POPX月¥50,000回収後）。S2への投資準備状況を追跡。
         </div>
 
         <div class="card-grid">
@@ -846,9 +606,8 @@ input[type="range"]::-webkit-slider-thumb {
                     <div class="control-label"><span>S2目標金額</span><span class="control-val" id="v-s2-target">¥25,000,000</span></div>
                     <input type="range" id="s-s2-target" min="15000000" max="40000000" step="1000000" value="25000000" oninput="forecast()">
                 </div>
-                <div class="control-group">
-                    <div class="control-label"><span>S2 Pool Rate（Forecast用）</span><span class="control-val" id="v-s2-pool-forecast">100%</span></div>
-                    <input type="range" id="s-s2-pool-forecast" min="0" max="100" value="100" oninput="forecast()">
+                <div class="note-box" style="margin:8px 0 0 0; font-size:12px;">
+                    S1プールだけでは到達不可能 → S2投資タブで POPX・greekee本体の投資シミュレーション
                 </div>
             </div>
         </div>
@@ -869,8 +628,8 @@ input[type="range"]::-webkit-slider-thumb {
                     <div class="stat-label">S2 Fund 累積</div>
                 </div>
                 <div class="stat-box">
-                    <div class="stat-num" id="y-months-to-s2">—</div>
-                    <div class="stat-label">S2 Ready まで</div>
+                    <div class="stat-num" id="y-gap-to-s2">—</div>
+                    <div class="stat-label">S2 不足額（要投資）</div>
                 </div>
             </div>
         </div>
@@ -884,103 +643,215 @@ input[type="range"]::-webkit-slider-thumb {
                         <th>杯数/日</th>
                         <th>カフェ売上</th>
                         <th>グッズ売上</th>
-                        <th>総売上</th>
                         <th>事業利益</th>
-                        <th>S2 Fund</th>
+                        <th>POPX回収</th>
+                        <th>S2 Pool</th>
                         <th>S2 累積</th>
-                        <th>POPX</th>
-                        <th>greekee</th>
+                        <th>POPX実収</th>
+                        <th>greekee実収</th>
                     </tr>
                 </thead>
-                <tbody id="forecast-body">
-                </tbody>
+                <tbody id="forecast-body"></tbody>
             </table>
         </div>
 
     </div>
 
-    <!-- ==================== TAB 4: INVESTMENT RECOVERY ==================== -->
+    <!-- ==================== TAB 4: S2 INVESTMENT & RECOVERY ==================== -->
     <div class="tab-panel" id="tab-recovery">
 
-        <div class="section-title">Investment Recovery Phases</div>
+        <div class="section-title">S2 Investment & Recovery Simulation</div>
 
         <div class="note-box">
-            S1（間借り）→ S2（1店舗目）→ S3（2店舗目）の3段階の事業拡大と投資回収フェーズを可視化します。
+            S1プールだけではS2（¥2,000〜3,000万）に到達不可。POPX本体・greekee本体からの<strong>直接投資</strong>を加えた総合シミュレーション。
         </div>
 
+        <!-- Phase Overview -->
         <div class="phase-timeline">
             <div class="phase-box s1">
-                <h4>📍 S1: 間借り運営</h4>
+                <h4>S1: 間借り運営</h4>
                 <p>
-                    <strong>フェーズ：</strong>事業スケール<br>
-                    <strong>場所：</strong>greekee中目黒店舗<br>
-                    <strong>資金プール：</strong>事業利益のX%を S2 投資に配分<br>
-                    <strong>目的：</strong>S2出店資金（¥2,000〜3,000万）をプール
+                    <strong>目的：</strong>事業検証・プール<br>
+                    <strong>利益：</strong>全額S2プール<br>
+                    <strong>POPX：</strong>¥50,000/月回収のみ
                 </p>
             </div>
-            <div class="phase-arrow">→</div>
+            <div class="phase-arrow">&rarr;</div>
             <div class="phase-box s2">
-                <h4>🏪 S2: 1店舗目</h4>
+                <h4>S2: 1店舗目</h4>
                 <p>
-                    <strong>フェーズ：</strong>投資回収<br>
-                    <strong>投資額：</strong>¥2,000〜3,000万<br>
-                    <strong>内訳：</strong>物件取得・内装・設備・運転資金<br>
-                    <strong>収益化：</strong>S2 店舗売上から投資回収
+                    <strong>投資：</strong>S1プール + 本体投資<br>
+                    <strong>目標：</strong>投資回収<br>
+                    <strong>分配：</strong>レベニューシェア開始
                 </p>
             </div>
-            <div class="phase-arrow">→</div>
+            <div class="phase-arrow">&rarr;</div>
             <div class="phase-box s3">
-                <h4>🏢 S3: 2店舗目</h4>
+                <h4>S3: 2店舗目</h4>
                 <p>
-                    <strong>フェーズ：</strong>運用フェーズ<br>
-                    <strong>体制：</strong>S2 の運営ノウハウを2号店に展開<br>
-                    <strong>目標：</strong>複数店舗による安定的な利益化
+                    <strong>体制：</strong>運用フェーズ<br>
+                    <strong>展開：</strong>S2ノウハウを拡張<br>
+                    <strong>目標：</strong>安定利益化
                 </p>
             </div>
         </div>
 
+        <!-- Investment Parameters -->
+        <div class="card-grid">
+            <div class="invest-card pool-card">
+                <h3 style="color:#92400e;">💰 S1 プール（自動計算）</h3>
+                <div class="control-group">
+                    <div class="control-label"><span>S1運営期間</span><span class="control-val" id="v-s1-months">12</span>ヶ月</div>
+                    <input type="range" id="s-s1-months" min="6" max="24" value="12" oninput="calcInvestment()">
+                </div>
+                <div style="background:#fef3c7;border-radius:8px;padding:12px;text-align:center;margin-top:8px;">
+                    <div style="font-size:11px;color:#92400e;margin-bottom:4px;">S1累積プール額</div>
+                    <div style="font-family:var(--font-heading);font-size:28px;font-weight:800;color:#92400e;" id="inv-s1-pool">¥0</div>
+                </div>
+            </div>
+            <div class="invest-card popx-card">
+                <h3 style="color:var(--color-navy);">🏢 POPX本体 投資</h3>
+                <div class="control-group">
+                    <div class="control-label"><span>投資額</span><span class="control-val" id="v-popx-invest">¥10,000,000</span></div>
+                    <input type="range" id="s-popx-invest" min="0" max="25000000" step="500000" value="10000000" oninput="calcInvestment()">
+                </div>
+                <div class="control-group">
+                    <div class="control-label"><span>投資タイミング</span><span class="control-val" id="v-popx-invest-timing">S1終了時</span></div>
+                    <input type="range" id="s-popx-invest-timing" min="6" max="24" value="12" oninput="calcInvestment()">
+                </div>
+            </div>
+            <div class="invest-card gk-card">
+                <h3 style="color:var(--color-pink);">🏢 greekee本体 投資</h3>
+                <div class="control-group">
+                    <div class="control-label"><span>投資額</span><span class="control-val" id="v-gk-invest">¥10,000,000</span></div>
+                    <input type="range" id="s-gk-invest" min="0" max="25000000" step="500000" value="10000000" oninput="calcInvestment()">
+                </div>
+                <div class="control-group">
+                    <div class="control-label"><span>投資タイミング</span><span class="control-val" id="v-gk-invest-timing">S1終了時</span></div>
+                    <input type="range" id="s-gk-invest-timing" min="6" max="24" value="12" oninput="calcInvestment()">
+                </div>
+            </div>
+        </div>
+
+        <!-- Total Investment Summary -->
+        <div class="invest-summary" id="invest-summary">
+            <h3>TOTAL S2 INVESTMENT</h3>
+            <div class="big-num" id="inv-total">¥0</div>
+            <div class="invest-grid">
+                <div class="invest-grid-item">
+                    <div class="ig-val" style="color:#fde68a;" id="inv-s1-pool-summary">¥0</div>
+                    <div class="ig-label">S1 プール</div>
+                </div>
+                <div class="invest-grid-item">
+                    <div class="ig-val" style="color:white;" id="inv-popx-summary">¥0</div>
+                    <div class="ig-label">POPX本体</div>
+                </div>
+                <div class="invest-grid-item">
+                    <div class="ig-val" style="color:var(--color-pink);" id="inv-gk-summary">¥0</div>
+                    <div class="ig-label">greekee本体</div>
+                </div>
+            </div>
+            <div style="margin-top:16px;font-size:13px;opacity:0.8;" id="inv-target-status">—</div>
+        </div>
+
+        <!-- S2 Recovery Simulation -->
         <div class="card">
-            <h3>📅 Investment Recovery Timeline</h3>
-            <div style="margin-top: 20px;">
-                <div style="margin-bottom: 24px;">
-                    <h4 style="font-family: var(--font-heading); font-size: 12px; font-weight: 700; color: var(--color-navy); margin-bottom: 12px;">S1フェーズ（Month 1-12）</h4>
-                    <div style="background: #e3f2fd; border-radius: 8px; padding: 16px; border-left: 4px solid var(--color-navy);">
-                        <div style="font-size: 12px; color: var(--color-navy); line-height: 1.6;">
-                            <strong>目標:</strong> S2 Fund（¥2,000〜3,000万）を積立て<br>
-                            <strong>達成条件:</strong> 月次 Pool Rate に基づいて合計事業利益から S2 プール分を配分<br>
-                            <strong>予想到達月：</strong> <span id="recovery-s2-month" style="font-weight: 700; color: var(--color-cyan);">—</span><br>
-                            <strong>予想 S2 Ready 日：</strong> <span id="recovery-s2-date" style="font-weight: 700; color: var(--color-cyan);">—</span>
-                        </div>
+            <h3>📊 S2 店舗 — 投資回収シミュレーション</h3>
+            <div class="card-grid" style="margin-bottom:16px;">
+                <div>
+                    <div class="control-group">
+                        <div class="control-label"><span>S2 月間売上（予想）</span><span class="control-val" id="v-s2-monthly-rev">¥3,000,000</span></div>
+                        <input type="range" id="s-s2-monthly-rev" min="1000000" max="8000000" step="100000" value="3000000" oninput="calcInvestment()">
+                    </div>
+                    <div class="control-group">
+                        <div class="control-label"><span>S2 営業利益率</span><span class="control-val" id="v-s2-profit-margin">15%</span></div>
+                        <input type="range" id="s-s2-profit-margin" min="5" max="30" value="15" oninput="calcInvestment()">
                     </div>
                 </div>
-
-                <div style="margin-bottom: 24px;">
-                    <h4 style="font-family: var(--font-heading); font-size: 12px; font-weight: 700; color: var(--color-navy); margin-bottom: 12px;">S2フェーズ（Month 13以降）</h4>
-                    <div style="background: #f0f9ff; border-radius: 8px; padding: 16px; border-left: 4px solid var(--color-cyan);">
-                        <div style="font-size: 12px; color: var(--color-navy); line-height: 1.6;">
-                            <strong>投資額：</strong> ¥2,000〜3,000万<br>
-                            <strong>内訳：</strong> 物件保証金・内装工事・設備・運転資金<br>
-                            <strong>回収方針：</strong> S2 店舗の月次営業利益から投資回収<br>
-                            <strong>推定回収月数：</strong> <span id="recovery-s2-payback" style="font-weight: 700; color: var(--color-cyan);">—</span> ヶ月
-                        </div>
+                <div>
+                    <div class="control-group">
+                        <div class="control-label"><span>S2 売上成長率 / 月</span><span class="control-val" id="v-s2-growth">3%</span></div>
+                        <input type="range" id="s-s2-growth" min="0" max="15" value="3" oninput="calcInvestment()">
                     </div>
-                </div>
-
-                <div style="margin-bottom: 24px;">
-                    <h4 style="font-family: var(--font-heading); font-size: 12px; font-weight: 700; color: var(--color-navy); margin-bottom: 12px;">S3フェーズ（S2 回収後）</h4>
-                    <div style="background: #fdf2f8; border-radius: 8px; padding: 16px; border-left: 4px solid var(--color-pink);">
-                        <div style="font-size: 12px; color: var(--color-navy); line-height: 1.6;">
-                            <strong>事業規模：</strong> S1・S2 実績を 2号店に展開<br>
-                            <strong>運営体制：</strong> S2 で確立したオペレーションモデルを拡張<br>
-                            <strong>目標：</strong> 複数店舗による安定的・継続的な利益化
-                        </div>
+                    <div class="control-group">
+                        <div class="control-label"><span>投資回収充当率</span><span class="control-val" id="v-s2-recovery-rate">60%</span></div>
+                        <input type="range" id="s-s2-recovery-rate" min="30" max="100" step="5" value="60" oninput="calcInvestment()">
+                    </div>
+                    <div class="note-box" style="margin:0;font-size:11px;">
+                        営業利益の何%を投資回収に充てるか（残りはレベニューシェアとして分配）
                     </div>
                 </div>
             </div>
 
-            <div class="note-box" style="margin-top: 24px;">
-                <strong>補足：</strong>上記は「S2 Fund を現在のシミュレーションパラメータで積立て続けた場合」の予想です。実際の S2 投資タイミングや店舗選定、市場環境により調整が必要です。
+            <!-- Recovery Progress -->
+            <div style="background:#f8f9fc;border-radius:12px;padding:20px;margin:16px 0;">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+                    <div style="font-family:var(--font-heading);font-size:12px;font-weight:700;color:var(--color-navy);">投資回収進捗</div>
+                    <div style="font-family:var(--font-heading);font-size:14px;font-weight:700;color:#059669;" id="recovery-pct">0%</div>
+                </div>
+                <div class="recovery-bar-bg">
+                    <div class="recovery-bar-fill" id="recovery-bar" style="width:0%"></div>
+                </div>
+                <div style="display:flex;justify-content:space-between;margin-top:12px;">
+                    <div>
+                        <div style="font-size:11px;color:#999;">回収済み</div>
+                        <div style="font-family:var(--font-heading);font-size:18px;font-weight:700;color:#059669;" id="recovery-recovered">¥0</div>
+                    </div>
+                    <div style="text-align:center;">
+                        <div style="font-size:11px;color:#999;">回収完了予想</div>
+                        <div style="font-family:var(--font-heading);font-size:18px;font-weight:700;color:var(--color-navy);" id="recovery-months">— ヶ月</div>
+                    </div>
+                    <div style="text-align:right;">
+                        <div style="font-size:11px;color:#999;">残額</div>
+                        <div style="font-family:var(--font-heading);font-size:18px;font-weight:700;color:#e74c3c;" id="recovery-remaining">¥0</div>
+                    </div>
+                </div>
             </div>
+
+            <!-- Recovery Timeline Table -->
+            <div style="overflow-x:auto;margin-top:16px;">
+                <table class="monthly-table" id="recovery-table">
+                    <thead>
+                        <tr>
+                            <th>S2 Month</th>
+                            <th>月間売上</th>
+                            <th>営業利益</th>
+                            <th>回収充当</th>
+                            <th>累積回収</th>
+                            <th>残額</th>
+                            <th>POPX分配</th>
+                            <th>greekee分配</th>
+                        </tr>
+                    </thead>
+                    <tbody id="recovery-body"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Investment Breakdown -->
+        <div class="card">
+            <h3>📋 投資内訳イメージ（S2出店コスト）</h3>
+            <table class="struct-table">
+                <thead><tr><th>項目</th><th>概算</th><th>備考</th></tr></thead>
+                <tbody>
+                    <tr><td>物件保証金・礼金</td><td>¥3,000,000 〜 5,000,000</td><td>都内10-20坪想定</td></tr>
+                    <tr><td>内装工事</td><td>¥5,000,000 〜 10,000,000</td><td>坪単価50-80万</td></tr>
+                    <tr><td>設備（エスプレッソマシン等）</td><td>¥3,000,000 〜 5,000,000</td><td>ハイエンド機材</td></tr>
+                    <tr><td>什器・家具</td><td>¥1,000,000 〜 2,000,000</td><td>テーブル・椅子・ディスプレイ</td></tr>
+                    <tr><td>初期在庫</td><td>¥500,000 〜 1,000,000</td><td>豆・グッズ・消耗品</td></tr>
+                    <tr><td>運転資金（3ヶ月分）</td><td>¥5,000,000 〜 8,000,000</td><td>家賃・人件費・仕入れ</td></tr>
+                    <tr><td>その他（許認可・デザイン）</td><td>¥1,000,000 〜 2,000,000</td><td>営業許可・ロゴ・メニュー</td></tr>
+                    <tr style="background:#f8f9fc;font-weight:700;">
+                        <td><strong>合計</strong></td>
+                        <td><strong>¥18,500,000 〜 33,000,000</strong></td>
+                        <td><strong>中央値 ¥25,000,000</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="note-box" style="margin-top: 24px;">
+            <strong>投資回収後（S3フェーズ）：</strong>投資回収完了後は、S2店舗の営業利益を通常のレベニューシェア（POPX 80 / greekee 20）で分配。投資比率に応じた追加リターンの取り決めは別途合意。
         </div>
 
     </div>
@@ -989,17 +860,19 @@ input[type="range"]::-webkit-slider-thumb {
 
 <script>
 // State
-let goodsPattern = 'A'; // A or B
-const popxGoodsPct = { A: 20, B: 70 };
-const greekeeGoodsPct = { A: 80, B: 30 };
+let goodsPattern = 'A';
+const popxGoodsPctMap = { A: 20, B: 70 };
+const greekeeGoodsPctMap = { A: 80, B: 30 };
 
 function fmt(n) {
-    // Always show exact yen, never round to 万
-    return '¥' + Math.round(n).toLocaleString();
+    return '\u00a5' + Math.round(n).toLocaleString();
 }
 
 function fmtMan(n) {
-    return '¥' + (n / 10000).toFixed(1) + '万';
+    if (Math.abs(n) >= 10000) {
+        return '\u00a5' + (n / 10000).toFixed(1) + '\u4e07';
+    }
+    return fmt(n);
 }
 
 function showTab(id) {
@@ -1009,7 +882,7 @@ function showTab(id) {
     event.target.classList.add('active');
     if (id === 'simulation') simulate();
     if (id === 'yearly') forecast();
-    if (id === 'recovery') updateRecovery();
+    if (id === 'recovery') calcInvestment();
 }
 
 function setGoodsPattern(p) {
@@ -1017,8 +890,8 @@ function setGoodsPattern(p) {
     document.getElementById('btn-patA').classList.toggle('active', p === 'A');
     document.getElementById('btn-patB').classList.toggle('active', p === 'B');
     document.getElementById('pattern-desc').innerHTML = p === 'A'
-        ? '<strong>Pattern A：</strong>POPXはクリエイティブのみ。greekeeがグッズ製造・販売オペレーション。'
-        : '<strong>Pattern B：</strong>POPXが企画・制作・在庫・販売を全て担当（vanitystore / pattythree活用）。';
+        ? '<strong>Pattern A\uff1a</strong>POPX\u306f\u30af\u30ea\u30a8\u30a4\u30c6\u30a3\u30d6\u306e\u307f\u3002greekee\u304c\u30b0\u30c3\u30ba\u88fd\u9020\u30fb\u8ca9\u58f2\u30aa\u30da\u30ec\u30fc\u30b7\u30e7\u30f3\u3002'
+        : '<strong>Pattern B\uff1a</strong>POPX\u304c\u4f01\u753b\u30fb\u5236\u4f5c\u30fb\u5728\u5eab\u30fb\u8ca9\u58f2\u3092\u5168\u3066\u62c5\u5f53\uff08vanitystore / pattythree\u6d3b\u7528\uff09\u3002';
     simulate();
 }
 
@@ -1035,7 +908,7 @@ function getSimParams() {
         shipping: +document.getElementById('s-shipping').value,
         goodsRev: +document.getElementById('s-goods-rev').value,
         goodsCogs: +document.getElementById('s-goods-cogs').value / 100,
-        s2PoolPct: +document.getElementById('s-s2-pool-pct').value / 100,
+        popxRecovery: +document.getElementById('s-popx-recovery').value,
     };
 }
 
@@ -1052,21 +925,31 @@ function calcMonth(p, cupsOverride, goodsRevOverride) {
     const goodsProfit = goodsRev - goodsCost;
 
     const totalProfit = cafeProfit + goodsProfit;
-    const s2Pool = totalProfit * p.s2PoolPct;
-    const distributableProfit = totalProfit - s2Pool;
 
-    const popxCafe = cafeProfit * 0.8;
-    const gkCafe = cafeProfit * 0.2;
-    const popxGoods = goodsProfit * (popxGoodsPct[goodsPattern] / 100);
-    const gkGoods = goodsProfit * (greekeeGoodsPct[goodsPattern] / 100);
+    // S1: POPX gets only fixed recovery, rest goes to S2 pool
+    const popxRecovery = p.popxRecovery || 50000;
+    const s2Pool = Math.max(0, totalProfit - popxRecovery);
+
+    // Theoretical split (for reference display)
+    const theoreticalPopxCafe = cafeProfit * 0.8;
+    const theoreticalGkCafe = cafeProfit * 0.2;
+    const theoreticalPopxGoods = goodsProfit * (popxGoodsPctMap[goodsPattern] / 100);
+    const theoreticalGkGoods = goodsProfit * (greekeeGoodsPctMap[goodsPattern] / 100);
 
     return {
         cafeRev, cafeCogs, fixedCosts, cafeProfit,
         goodsRev, goodsCost, goodsProfit,
-        totalProfit, s2Pool, distributableProfit,
-        popxCafe, gkCafe, popxGoods, gkGoods,
-        popxTotal: popxCafe + popxGoods,
-        gkTotal: gkCafe + gkGoods + p.rent + p.barista,
+        totalProfit,
+        s2Pool,
+        popxRecovery,
+        // Theoretical (S2 onwards)
+        theoreticalPopxCafe, theoreticalGkCafe,
+        theoreticalPopxGoods, theoreticalGkGoods,
+        theoreticalPopxTotal: theoreticalPopxCafe + theoreticalPopxGoods,
+        theoreticalGkTotal: theoreticalGkCafe + theoreticalGkGoods,
+        // Actual S1 income
+        popxActual: popxRecovery,
+        gkActual: p.rent + p.barista, // greekee gets fixed top-off only
         cups
     };
 }
@@ -1077,50 +960,54 @@ function simulate() {
     // Update display values
     document.getElementById('v-days').textContent = p.days;
     document.getElementById('v-cups').textContent = p.cups;
-    document.getElementById('v-price').textContent = '¥' + p.price.toLocaleString();
-    document.getElementById('v-bean').textContent = '¥' + p.bean.toLocaleString();
-    document.getElementById('v-other').textContent = '¥' + p.otherCost.toLocaleString();
-    document.getElementById('v-rent').textContent = '¥' + p.rent.toLocaleString();
-    document.getElementById('v-barista').textContent = '¥' + p.barista.toLocaleString();
-    document.getElementById('v-misc').textContent = '¥' + p.misc.toLocaleString();
-    document.getElementById('v-shipping').textContent = '¥' + p.shipping.toLocaleString();
-    document.getElementById('v-goods-rev').textContent = '¥' + p.goodsRev.toLocaleString();
+    document.getElementById('v-price').textContent = '\u00a5' + p.price.toLocaleString();
+    document.getElementById('v-bean').textContent = '\u00a5' + p.bean.toLocaleString();
+    document.getElementById('v-other').textContent = '\u00a5' + p.otherCost.toLocaleString();
+    document.getElementById('v-rent').textContent = '\u00a5' + p.rent.toLocaleString();
+    document.getElementById('v-barista').textContent = '\u00a5' + p.barista.toLocaleString();
+    document.getElementById('v-misc').textContent = '\u00a5' + p.misc.toLocaleString();
+    document.getElementById('v-shipping').textContent = '\u00a5' + p.shipping.toLocaleString();
+    document.getElementById('v-goods-rev').textContent = '\u00a5' + p.goodsRev.toLocaleString();
     document.getElementById('v-goods-cogs').textContent = Math.round(p.goodsCogs * 100) + '%';
-    document.getElementById('v-s2-pool-pct').textContent = Math.round(p.s2PoolPct * 100) + '%';
+    document.getElementById('v-popx-recovery').textContent = '\u00a5' + p.popxRecovery.toLocaleString();
 
     const r = calcMonth(p);
 
-    // Update results
+    // Results banner
     const totalEl = document.getElementById('r-total');
     totalEl.textContent = fmt(r.totalProfit);
     totalEl.className = 'result-big ' + (r.totalProfit >= 0 ? 'positive' : 'negative');
-
     document.getElementById('r-cafe-profit').textContent = fmt(r.cafeProfit);
     document.getElementById('r-goods-profit').textContent = fmt(r.goodsProfit);
 
-    // POPX with formulas
-    const popxCafeFormula = `カフェ事業利益 ${fmt(r.cafeProfit)} × 80% = ${fmt(r.popxCafe)}`;
-    document.getElementById('f-popx-cafe-formula').textContent = popxCafeFormula;
-    document.getElementById('r-popx-cafe').textContent = fmt(r.popxCafe);
-
+    // POPX theoretical (pooled)
     const popxGoodsPct = goodsPattern === 'A' ? 20 : 70;
-    const popxGoodsFormula = `グッズ事業利益 ${fmt(r.goodsProfit)} × ${popxGoodsPct}% = ${fmt(r.popxGoods)}`;
-    document.getElementById('f-popx-goods-formula').textContent = popxGoodsFormula;
-    document.getElementById('r-popx-goods').textContent = fmt(r.popxGoods);
-    document.getElementById('r-popx-total').textContent = fmt(r.popxTotal);
+    document.getElementById('f-popx-cafe-formula').textContent =
+        `\u30ab\u30d5\u30a7\u4e8b\u696d\u5229\u76ca ${fmt(r.cafeProfit)} \u00d7 80% = ${fmt(r.theoreticalPopxCafe)}`;
+    document.getElementById('r-popx-cafe-pooled').textContent = fmt(r.theoreticalPopxCafe);
+    document.getElementById('f-popx-goods-formula').textContent =
+        `\u30b0\u30c3\u30ba\u4e8b\u696d\u5229\u76ca ${fmt(r.goodsProfit)} \u00d7 ${popxGoodsPct}% = ${fmt(r.theoreticalPopxGoods)}`;
+    document.getElementById('r-popx-goods-pooled').textContent = fmt(r.theoreticalPopxGoods);
+    document.getElementById('r-popx-total-pooled').textContent = `\u5408\u8a08: ${fmt(r.theoreticalPopxTotal)}`;
+    document.getElementById('r-popx-actual').textContent = fmt(r.popxActual);
 
-    // greekee with formulas
-    const gkCafeFormula = `カフェ事業利益 ${fmt(r.cafeProfit)} × 20% = ${fmt(r.gkCafe)}`;
-    document.getElementById('f-gk-cafe-formula').textContent = gkCafeFormula;
-    document.getElementById('r-gk-cafe').textContent = fmt(r.gkCafe);
-
+    // greekee theoretical (pooled)
     const greekeeGoodsPct = goodsPattern === 'A' ? 80 : 30;
-    const gkGoodsFormula = `グッズ事業利益 ${fmt(r.goodsProfit)} × ${greekeeGoodsPct}% = ${fmt(r.gkGoods)}`;
-    document.getElementById('f-gk-goods-formula').textContent = gkGoodsFormula;
-    document.getElementById('r-gk-goods').textContent = fmt(r.gkGoods);
+    document.getElementById('f-gk-cafe-formula').textContent =
+        `\u30ab\u30d5\u30a7\u4e8b\u696d\u5229\u76ca ${fmt(r.cafeProfit)} \u00d7 20% = ${fmt(r.theoreticalGkCafe)}`;
+    document.getElementById('r-gk-cafe-pooled').textContent = fmt(r.theoreticalGkCafe);
+    document.getElementById('f-gk-goods-formula').textContent =
+        `\u30b0\u30c3\u30ba\u4e8b\u696d\u5229\u76ca ${fmt(r.goodsProfit)} \u00d7 ${greekeeGoodsPct}% = ${fmt(r.theoreticalGkGoods)}`;
+    document.getElementById('r-gk-goods-pooled').textContent = fmt(r.theoreticalGkGoods);
+    document.getElementById('r-gk-total-pooled').textContent = `\u5408\u8a08: ${fmt(r.theoreticalGkTotal)}`;
     document.getElementById('r-gk-rent').textContent = fmt(p.rent);
     document.getElementById('r-gk-barista').textContent = fmt(p.barista);
-    document.getElementById('r-gk-total').textContent = fmt(r.gkTotal);
+    document.getElementById('r-gk-actual').textContent = fmt(r.gkActual);
+
+    // S2 Pool banner
+    document.getElementById('r-s2-pool-amount').textContent = fmt(r.s2Pool);
+    document.getElementById('r-s2-pool-formula').textContent =
+        `\u4e8b\u696d\u5229\u76ca ${fmt(r.totalProfit)} \u2212 POPX\u56de\u53ce ${fmt(r.popxRecovery)} = ${fmt(r.s2Pool)}`;
 
     // Waterfall
     document.getElementById('w-cafe-rev').textContent = fmt(r.cafeRev);
@@ -1140,11 +1027,8 @@ function simulate() {
     const wtEl = document.getElementById('w-total');
     wtEl.textContent = fmt(r.totalProfit);
     wtEl.className = 'cost-value ' + (r.totalProfit >= 0 ? 'green' : 'red');
-
-    // S2 Waterfall
-    const s2Pct = Math.round(p.s2PoolPct * 100);
-    document.getElementById('w-s2-waterfall').textContent =
-        `合計事業利益 ${fmt(r.totalProfit)} → S2プール（${s2Pct}%）= ${fmt(r.s2Pool)} → 分配可能利益 = ${fmt(r.distributableProfit)}`;
+    document.getElementById('w-popx-recovery').textContent = '-' + fmt(r.popxRecovery);
+    document.getElementById('w-s2-pool').textContent = fmt(r.s2Pool);
 }
 
 function forecast() {
@@ -1153,126 +1037,172 @@ function forecast() {
     const goodsGrowth = +document.getElementById('s-goods-growth').value / 100;
     const cupsCap = +document.getElementById('s-cups-cap').value;
     const s2Target = +document.getElementById('s-s2-target').value;
-    const s2PoolForecast = +document.getElementById('s-s2-pool-forecast').value / 100;
 
     document.getElementById('v-cafe-growth').textContent = Math.round(cafeGrowth * 100) + '%';
     document.getElementById('v-goods-growth').textContent = Math.round(goodsGrowth * 100) + '%';
     document.getElementById('v-cups-cap').textContent = cupsCap;
-    document.getElementById('v-s2-target').textContent = '¥' + s2Target.toLocaleString();
-    document.getElementById('v-s2-pool-forecast').textContent = Math.round(s2PoolForecast * 100) + '%';
+    document.getElementById('v-s2-target').textContent = '\u00a5' + s2Target.toLocaleString();
 
     let html = '';
-    let totalRev = 0, totalProfit = 0, totalPopx = 0, totalGk = 0, s2Accumulated = 0;
-    let s2ReadyMonth = null;
+    let totalRev = 0, totalProfit = 0, s2Accumulated = 0;
+    let totalPopxActual = 0, totalGkActual = 0;
     const months = ['M1','M2','M3','M4','M5','M6','M7','M8','M9','M10','M11','M12'];
 
     for (let i = 0; i < 12; i++) {
         const cups = Math.min(Math.round(p.cups * Math.pow(1 + cafeGrowth, i)), cupsCap);
         const goodsRev = Math.round(p.goodsRev * Math.pow(1 + goodsGrowth, i));
-
-        // Use forecast pool rate
-        const pForecast = { ...p, s2PoolPct: s2PoolForecast };
-        const r = calcMonth(pForecast, cups, goodsRev);
+        const r = calcMonth(p, cups, goodsRev);
 
         totalRev += r.cafeRev + r.goodsRev;
         totalProfit += r.totalProfit;
-        totalPopx += r.popxTotal;
-        totalGk += r.gkTotal;
         s2Accumulated += r.s2Pool;
-
-        // Check if S2 Ready this month
-        let s2ReadyBadge = '';
-        if (s2ReadyMonth === null && s2Accumulated >= s2Target) {
-            s2ReadyMonth = i + 1;
-            s2ReadyBadge = ' <span class="badge badge-s2-ready">S2 READY</span>';
-        }
+        totalPopxActual += r.popxActual;
+        totalGkActual += r.gkActual;
 
         const profitClass = r.totalProfit >= 0 ? 'positive' : 'negative';
         html += `<tr>
-            <td>${months[i]}${s2ReadyBadge}</td>
+            <td>${months[i]}</td>
             <td>${cups}</td>
             <td>${fmt(r.cafeRev)}</td>
             <td>${fmt(r.goodsRev)}</td>
-            <td>${fmt(r.cafeRev + r.goodsRev)}</td>
             <td class="${profitClass}">${fmt(r.totalProfit)}</td>
+            <td>${fmt(r.popxRecovery)}</td>
             <td>${fmt(r.s2Pool)}</td>
             <td>${fmt(s2Accumulated)}</td>
-            <td>${fmt(r.popxTotal)}</td>
-            <td>${fmt(r.gkTotal)}</td>
+            <td>${fmt(r.popxActual)}</td>
+            <td>${fmt(r.gkActual)}</td>
         </tr>`;
     }
 
-    // Total row
     html += `<tr>
         <td>TOTAL</td>
-        <td>—</td>
-        <td>—</td>
-        <td>—</td>
-        <td>${fmt(totalRev)}</td>
+        <td>\u2014</td>
+        <td>\u2014</td>
+        <td>\u2014</td>
         <td class="${totalProfit >= 0 ? 'positive' : 'negative'}">${fmt(totalProfit)}</td>
+        <td>${fmt(totalPopxActual)}</td>
         <td>${fmt(s2Accumulated)}</td>
         <td>${fmt(s2Accumulated)}</td>
-        <td>${fmt(totalPopx)}</td>
-        <td>${fmt(totalGk)}</td>
+        <td>${fmt(totalPopxActual)}</td>
+        <td>${fmt(totalGkActual)}</td>
     </tr>`;
 
     document.getElementById('forecast-body').innerHTML = html;
     document.getElementById('y-total-rev').textContent = fmt(totalRev);
     document.getElementById('y-total-profit').textContent = fmt(totalProfit);
     document.getElementById('y-s2-accumulated').textContent = fmt(s2Accumulated);
-    document.getElementById('y-months-to-s2').textContent = s2ReadyMonth ? `M${s2ReadyMonth}` : '未達';
-    document.getElementById('y-popx-total').textContent = fmt(totalPopx);
-    document.getElementById('y-gk-total').textContent = fmt(totalGk);
+
+    const gap = Math.max(0, s2Target - s2Accumulated);
+    document.getElementById('y-gap-to-s2').textContent = gap > 0 ? fmt(gap) : '\u2714 \u9054\u6210';
 }
 
-function updateRecovery() {
+function calcInvestment() {
     const p = getSimParams();
-    const s2Target = +document.getElementById('s-s2-target').value;
     const cafeGrowth = +document.getElementById('s-cafe-growth').value / 100;
     const goodsGrowth = +document.getElementById('s-goods-growth').value / 100;
     const cupsCap = +document.getElementById('s-cups-cap').value;
-    const s2PoolForecast = +document.getElementById('s-s2-pool-forecast').value / 100;
+    const s2Target = +document.getElementById('s-s2-target').value;
 
-    // Calculate months to S2 readiness
-    let s2AccumulatedForecast = 0;
-    let s2ReadyMonthNum = null;
-    for (let i = 0; i < 24; i++) {
+    const s1Months = +document.getElementById('s-s1-months').value;
+    const popxInvest = +document.getElementById('s-popx-invest').value;
+    const gkInvest = +document.getElementById('s-gk-invest').value;
+    const popxInvestTiming = +document.getElementById('s-popx-invest-timing').value;
+    const gkInvestTiming = +document.getElementById('s-gk-invest-timing').value;
+
+    const s2MonthlyRev = +document.getElementById('s-s2-monthly-rev').value;
+    const s2ProfitMargin = +document.getElementById('s-s2-profit-margin').value / 100;
+    const s2Growth = +document.getElementById('s-s2-growth').value / 100;
+    const s2RecoveryRate = +document.getElementById('s-s2-recovery-rate').value / 100;
+
+    // Update display
+    document.getElementById('v-s1-months').textContent = s1Months;
+    document.getElementById('v-popx-invest').textContent = '\u00a5' + popxInvest.toLocaleString();
+    document.getElementById('v-gk-invest').textContent = '\u00a5' + gkInvest.toLocaleString();
+    document.getElementById('v-popx-invest-timing').textContent = `Month ${popxInvestTiming}`;
+    document.getElementById('v-gk-invest-timing').textContent = `Month ${gkInvestTiming}`;
+    document.getElementById('v-s2-monthly-rev').textContent = '\u00a5' + s2MonthlyRev.toLocaleString();
+    document.getElementById('v-s2-profit-margin').textContent = Math.round(s2ProfitMargin * 100) + '%';
+    document.getElementById('v-s2-growth').textContent = Math.round(s2Growth * 100) + '%';
+    document.getElementById('v-s2-recovery-rate').textContent = Math.round(s2RecoveryRate * 100) + '%';
+
+    // Calculate S1 pool
+    let s1Pool = 0;
+    for (let i = 0; i < s1Months; i++) {
         const cups = Math.min(Math.round(p.cups * Math.pow(1 + cafeGrowth, i)), cupsCap);
         const goodsRev = Math.round(p.goodsRev * Math.pow(1 + goodsGrowth, i));
-        const pForecast = { ...p, s2PoolPct: s2PoolForecast };
-        const r = calcMonth(pForecast, cups, goodsRev);
-        s2AccumulatedForecast += r.s2Pool;
-        if (s2ReadyMonthNum === null && s2AccumulatedForecast >= s2Target) {
-            s2ReadyMonthNum = i + 1;
-            break;
-        }
+        const r = calcMonth(p, cups, goodsRev);
+        s1Pool += r.s2Pool;
     }
 
-    if (s2ReadyMonthNum) {
-        document.getElementById('recovery-s2-month').textContent = `Month ${s2ReadyMonthNum}`;
-        const startDate = new Date();
-        const readyDate = new Date(startDate.getFullYear(), startDate.getMonth() + s2ReadyMonthNum, startDate.getDate());
-        document.getElementById('recovery-s2-date').textContent = readyDate.toLocaleDateString('ja-JP');
+    document.getElementById('inv-s1-pool').textContent = fmt(s1Pool);
+
+    // Total investment
+    const totalInvestment = s1Pool + popxInvest + gkInvest;
+    document.getElementById('inv-total').textContent = fmt(totalInvestment);
+    document.getElementById('inv-s1-pool-summary').textContent = fmt(s1Pool);
+    document.getElementById('inv-popx-summary').textContent = fmt(popxInvest);
+    document.getElementById('inv-gk-summary').textContent = fmt(gkInvest);
+
+    const targetDiff = totalInvestment - s2Target;
+    if (targetDiff >= 0) {
+        document.getElementById('inv-target-status').innerHTML =
+            `\u2714 S2\u76ee\u6a19 ${fmt(s2Target)} \u306b\u5bfe\u3057\u3066 ${fmt(targetDiff)} \u306e\u4f59\u88d5\u3042\u308a`;
     } else {
-        document.getElementById('recovery-s2-month').textContent = '未達（12ヶ月以内）';
-        document.getElementById('recovery-s2-date').textContent = '—';
+        document.getElementById('inv-target-status').innerHTML =
+            `\u26a0 S2\u76ee\u6a19 ${fmt(s2Target)} \u306b\u5bfe\u3057\u3066 ${fmt(Math.abs(targetDiff))} \u4e0d\u8db3`;
     }
 
-    // Estimate S2 payback: Assume S2 store profit is ~130% of S1 average
-    // Get average S1 month profit
-    let s1TotalProfit = 0;
-    for (let i = 0; i < 12; i++) {
-        const cups = Math.min(Math.round(p.cups * Math.pow(1 + cafeGrowth, i)), cupsCap);
-        const goodsRev = Math.round(p.goodsRev * Math.pow(1 + goodsGrowth, i));
-        const pForecast = { ...p, s2PoolPct: s2PoolForecast };
-        const r = calcMonth(pForecast, cups, goodsRev);
-        s1TotalProfit += r.totalProfit;
-    }
-    const s1AvgMonthProfit = s1TotalProfit / 12;
-    const s2EstimateMonthProfit = s1AvgMonthProfit * 1.3;
-    const s2PaybackMonths = Math.ceil(s2Target / s2EstimateMonthProfit);
+    // S2 Recovery simulation (36 months max)
+    let html = '';
+    let cumulativeRecovered = 0;
+    let recoveryMonth = null;
 
-    document.getElementById('recovery-s2-payback').textContent = Math.max(12, s2PaybackMonths);
+    for (let i = 0; i < 36; i++) {
+        const monthRev = Math.round(s2MonthlyRev * Math.pow(1 + s2Growth, i));
+        const monthProfit = Math.round(monthRev * s2ProfitMargin);
+        const recoveryAmount = Math.round(monthProfit * s2RecoveryRate);
+        const distributable = monthProfit - recoveryAmount;
+
+        cumulativeRecovered += recoveryAmount;
+        const remaining = Math.max(0, totalInvestment - cumulativeRecovered);
+
+        // Revenue share on distributable portion
+        const popxShare = Math.round(distributable * 0.8);
+        const gkShare = Math.round(distributable * 0.2);
+
+        let badge = '';
+        if (recoveryMonth === null && cumulativeRecovered >= totalInvestment) {
+            recoveryMonth = i + 1;
+            badge = ' <span class="badge-s2-ready">RECOVERED</span>';
+            cumulativeRecovered = totalInvestment; // cap
+        }
+
+        if (i < 24 || (recoveryMonth && i <= recoveryMonth + 2) || i === 35) {
+            html += `<tr>
+                <td>S2-M${i + 1}${badge}</td>
+                <td>${fmt(monthRev)}</td>
+                <td class="${monthProfit >= 0 ? 'positive' : 'negative'}">${fmt(monthProfit)}</td>
+                <td>${fmt(recoveryAmount)}</td>
+                <td>${fmt(Math.min(cumulativeRecovered, totalInvestment))}</td>
+                <td class="${remaining > 0 ? 'negative' : 'positive'}">${fmt(remaining)}</td>
+                <td>${fmt(popxShare)}</td>
+                <td>${fmt(gkShare)}</td>
+            </tr>`;
+        }
+
+        if (recoveryMonth && i > recoveryMonth + 2) break;
+    }
+
+    document.getElementById('recovery-body').innerHTML = html;
+
+    // Recovery progress bar
+    const pct = Math.min(100, (cumulativeRecovered / totalInvestment) * 100);
+    document.getElementById('recovery-pct').textContent = Math.round(pct) + '%';
+    document.getElementById('recovery-bar').style.width = pct + '%';
+    document.getElementById('recovery-bar').textContent = pct >= 10 ? Math.round(pct) + '%' : '';
+    document.getElementById('recovery-recovered').textContent = fmt(Math.min(cumulativeRecovered, totalInvestment));
+    document.getElementById('recovery-months').textContent = recoveryMonth ? `${recoveryMonth} \u30f6\u6708` : '36\u30f6\u6708\u4ee5\u4e0a';
+    document.getElementById('recovery-remaining').textContent = fmt(Math.max(0, totalInvestment - cumulativeRecovered));
 }
 
 // Init
